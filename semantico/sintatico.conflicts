@@ -1,0 +1,36 @@
+
+** Conflict (shift/reduce) in state 145.
+** Token involved: ELSE
+** This state is reached from programa after reading:
+
+PROGRAM ID PONTOVIRG list(declaracao_funcao) list(declaracao) BEGIN CASE variavel OF expressao DOISPONTOS IF expressao THEN BEGIN list(comando) END 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+programa 
+PROGRAM ID PONTOVIRG list(declaracao_funcao) list(declaracao) BEGIN list(comando) ENDPROG EOF 
+                                                                    comando list(comando) 
+                                                                    comando_case 
+                                                                    (?)
+
+** In state 145, looking ahead at ELSE, reducing production
+** option(__anonymous_1) -> 
+** is permitted because of the following sub-derivation:
+
+CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG // lookahead token appears because option(__anonymous_2) can begin with ELSE
+                 cases // lookahead token is inherited
+                 expressao DOISPONTOS comando // lookahead token is inherited
+                                      comando_se // lookahead token is inherited
+                                      IF expressao THEN BEGIN list(comando) END option(__anonymous_1) // lookahead token is inherited
+                                                                                . 
+
+** In state 145, looking ahead at ELSE, shifting is permitted
+** because of the following sub-derivation:
+
+CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+                 cases 
+                 expressao DOISPONTOS comando 
+                                      comando_se 
+                                      IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+                                                                                . ELSE BEGIN list(comando) END PONTOVIRG 

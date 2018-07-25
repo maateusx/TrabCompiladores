@@ -1,0 +1,1461 @@
+programa: PROGRAM PONTOVIRG BEGIN APAR LITSTRING WHILE 
+##
+## Ends in an error in state: 46.
+##
+## expressao -> expressao . MAIS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENOS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MULTIPLICA expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . DIVIDE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MODULO expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENOR expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . IGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENORIGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MAIORIGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . DIFERENTE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MAIOR expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . E expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . OU expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> APAR expressao . FPAR [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## APAR expressao 
+##
+
+Estado 46: Faltou operador ou ')'
+
+programa: PROGRAM PONTOVIRG BEGIN APAR WHILE 
+##
+## Ends in an error in state: 45.
+##
+## expressao -> APAR . expressao FPAR [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## APAR 
+##
+
+Estado 45: Faltou ')'
+
+programa: PROGRAM PONTOVIRG BEGIN ENDPROG WHILE 
+##
+## Ends in an error in state: 151.
+##
+## programa -> PROGRAM PONTOVIRG list(declaracao_funcao) list(declaracao) BEGIN list(comando) ENDPROG . EOF [ # ]
+##
+## The known suffix of the stack is as follows:
+## PROGRAM PONTOVIRG list(declaracao_funcao) list(declaracao) BEGIN list(comando) ENDPROG 
+##
+
+Estado 151: Nao encontrou final de arquivo
+
+programa: PROGRAM PONTOVIRG BEGIN FOR LITSTRING ATRIB BOOL PONTOVIRG TO LITSTRING DO VIRG 
+##
+## Ends in an error in state: 119.
+##
+## comando_for -> FOR comando_atribuicao TO expressao DO . comando [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## FOR comando_atribuicao TO expressao DO 
+##
+
+Estado 119: Faltou comando a ser executado.
+
+programa: PROGRAM PONTOVIRG BEGIN FOR LITSTRING ATRIB BOOL PONTOVIRG TO LITSTRING WHILE 
+##
+## Ends in an error in state: 118.
+##
+## comando_for -> FOR comando_atribuicao TO expressao . DO comando [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+## expressao -> expressao . MAIS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . MENOS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . MULTIPLICA expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . DIVIDE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . MODULO expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . MENOR expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . IGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . MENORIGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . MAIORIGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . DIFERENTE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . MAIOR expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . E expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . OU expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+##
+## The known suffix of the stack is as follows:
+## FOR comando_atribuicao TO expressao 
+##
+
+Estado 118: Faltou operador na expressao apos TO.
+
+programa: PROGRAM PONTOVIRG BEGIN FOR LITSTRING ATRIB BOOL PONTOVIRG TO WHILE 
+##
+## Ends in an error in state: 117.
+##
+## comando_for -> FOR comando_atribuicao TO . expressao DO comando [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## FOR comando_atribuicao TO 
+##
+
+Estado 117: Faltou expressao apos TO.
+
+programa: PROGRAM PONTOVIRG BEGIN FOR LITSTRING ATRIB BOOL PONTOVIRG WHILE 
+##
+## Ends in an error in state: 116.
+##
+## comando_for -> FOR comando_atribuicao . TO expressao DO comando [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## FOR comando_atribuicao 
+##
+
+Estado 116: Faltou 'to' no for.
+
+programa: PROGRAM PONTOVIRG BEGIN FOR WHILE 
+##
+## Ends in an error in state: 111.
+##
+## comando_for -> FOR . comando_atribuicao TO expressao DO comando [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## FOR 
+##
+
+Estado 111: Faltou atribuicao no for.
+
+programa: PROGRAM PONTOVIRG BEGIN ID APAR FPAR END 
+##
+## Ends in an error in state: 150.
+##
+## programa -> PROGRAM PONTOVIRG list(declaracao_funcao) list(declaracao) BEGIN list(comando) . ENDPROG EOF [ # ]
+##
+## The known suffix of the stack is as follows:
+## PROGRAM PONTOVIRG list(declaracao_funcao) list(declaracao) BEGIN list(comando) 
+##
+## WARNING: This example involves spurious reductions.
+## This implies that, although the LR(1) items shown above provide an
+## accurate view of the past (what has been recognized so far), they
+## may provide an INCOMPLETE view of the future (what was expected next).
+## In state 128, spurious reduction of production comando_funcao -> chamada 
+## In state 123, spurious reduction of production comando -> comando_funcao 
+## In state 136, spurious reduction of production list(comando) -> 
+## In state 137, spurious reduction of production list(comando) -> comando list(comando) 
+##
+
+Estado 150: Esperava 'end.'
+
+programa: PROGRAM PONTOVIRG BEGIN ID APAR FPAR VIRG 
+##
+## Ends in an error in state: 128.
+##
+## comando_funcao -> chamada . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+## expressao -> chamada . [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## chamada 
+##
+
+Estado 128: Esperava chamada de funcao com id e seus arguemntos.
+
+programa: PROGRAM PONTOVIRG BEGIN ID APAR LITSTRING VIRG LITSTRING WHILE 
+##
+## Ends in an error in state: 77.
+##
+## expressao -> expressao . MAIS expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENOS expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MULTIPLICA expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . DIVIDE expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MODULO expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENOR expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . IGUAL expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENORIGUAL expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MAIORIGUAL expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . DIFERENTE expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MAIOR expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . E expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . OU expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## seq_args -> seq_args VIRG expressao . [ VIRG FPAR ]
+##
+## The known suffix of the stack is as follows:
+## seq_args VIRG expressao 
+##
+
+Estado 77: Esperava operador para expressao ou ','.
+
+programa: PROGRAM PONTOVIRG BEGIN ID APAR LITSTRING VIRG WHILE 
+##
+## Ends in an error in state: 76.
+##
+## seq_args -> seq_args VIRG . expressao [ VIRG FPAR ]
+##
+## The known suffix of the stack is as follows:
+## seq_args VIRG 
+##
+
+Estado 76: Esperava por expressao.
+
+programa: PROGRAM PONTOVIRG BEGIN ID APAR LITSTRING WHILE 
+##
+## Ends in an error in state: 79.
+##
+## expressao -> expressao . MAIS expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENOS expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MULTIPLICA expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . DIVIDE expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MODULO expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENOR expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . IGUAL expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENORIGUAL expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MAIORIGUAL expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . DIFERENTE expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MAIOR expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . E expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . OU expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## seq_args -> expressao . [ VIRG FPAR ]
+##
+## The known suffix of the stack is as follows:
+## expressao 
+##
+
+Estado 79: Esperava por operador para expressao ou ')'.
+
+programa: PROGRAM PONTOVIRG BEGIN ID APAR WHILE 
+##
+## Ends in an error in state: 42.
+##
+## args -> APAR . FPAR [ WHILE VIRG THEN PRINTLN PRINT PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR LITSTRING LITREAL LITINT LEIALN LEIA IGUAL IF ID FPAR FOR ENDPROG END E DO DIVIDE DIFERENTE BOOL ATRIB APAR ]
+## args -> APAR . seq_args FPAR [ WHILE VIRG THEN PRINTLN PRINT PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR LITSTRING LITREAL LITINT LEIALN LEIA IGUAL IF ID FPAR FOR ENDPROG END E DO DIVIDE DIFERENTE BOOL ATRIB APAR ]
+##
+## The known suffix of the stack is as follows:
+## APAR 
+##
+
+Estado 42: Esperava argumentos ou ')'.
+
+programa: PROGRAM PONTOVIRG BEGIN ID WHILE 
+##
+## Ends in an error in state: 41.
+##
+## chamada -> ID . args [ WHILE VIRG THEN PRINTLN PRINT PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR LITSTRING LITREAL LITINT LEIALN LEIA IGUAL IF ID FPAR FOR ENDPROG END E DO DIVIDE DIFERENTE BOOL ATRIB APAR ]
+## expressao -> ID . [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## ID 
+##
+
+Estado 41: Esperava por estrutura de argumentos.
+
+programa: PROGRAM PONTOVIRG BEGIN IF LITSTRING THEN BEGIN END ELSE BEGIN END WHILE 
+##
+## Ends in an error in state: 134.
+##
+## option(__anonymous_0) -> ELSE BEGIN list(comando) END . PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## ELSE BEGIN list(comando) END 
+##
+
+Estado 134: Esperava ';'
+
+programa: PROGRAM PONTOVIRG BEGIN IF LITSTRING THEN BEGIN END ELSE BEGIN ID APAR FPAR ENDPROG 
+##
+## Ends in an error in state: 133.
+##
+## option(__anonymous_0) -> ELSE BEGIN list(comando) . END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## ELSE BEGIN list(comando) 
+##
+## WARNING: This example involves spurious reductions.
+## This implies that, although the LR(1) items shown above provide an
+## accurate view of the past (what has been recognized so far), they
+## may provide an INCOMPLETE view of the future (what was expected next).
+## In state 128, spurious reduction of production comando_funcao -> chamada 
+## In state 123, spurious reduction of production comando -> comando_funcao 
+## In state 136, spurious reduction of production list(comando) -> 
+## In state 137, spurious reduction of production list(comando) -> comando list(comando) 
+##
+
+Estado 133: Esperava por 'end'.
+
+programa: PROGRAM PONTOVIRG BEGIN IF LITSTRING THEN BEGIN END ELSE BEGIN VIRG 
+##
+## Ends in an error in state: 132.
+##
+## option(__anonymous_0) -> ELSE BEGIN . list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## ELSE BEGIN 
+##
+
+Estado 132: Esperava por bloco de comando.
+
+programa: PROGRAM PONTOVIRG BEGIN IF LITSTRING THEN BEGIN END ELSE WHILE 
+##
+## Ends in an error in state: 131.
+##
+## option(__anonymous_0) -> ELSE . BEGIN list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## ELSE 
+##
+
+Estado 131: Esperava por 'begin'
+
+programa: PROGRAM PONTOVIRG BEGIN IF LITSTRING THEN BEGIN END VIRG 
+##
+## Ends in an error in state: 130.
+##
+## comando_se -> IF expressao THEN BEGIN list(comando) END . option(__anonymous_0) [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## IF expressao THEN BEGIN list(comando) END 
+##
+
+Estado 130: Esperava por 'else' ou pela continuacao da funcao principal
+
+programa: PROGRAM PONTOVIRG BEGIN IF LITSTRING THEN BEGIN ID APAR FPAR ENDPROG 
+##
+## Ends in an error in state: 129.
+##
+## comando_se -> IF expressao THEN BEGIN list(comando) . END option(__anonymous_0) [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## IF expressao THEN BEGIN list(comando) 
+##
+## WARNING: This example involves spurious reductions.
+## This implies that, although the LR(1) items shown above provide an
+## accurate view of the past (what has been recognized so far), they
+## may provide an INCOMPLETE view of the future (what was expected next).
+## In state 128, spurious reduction of production comando_funcao -> chamada 
+## In state 123, spurious reduction of production comando -> comando_funcao 
+## In state 136, spurious reduction of production list(comando) -> 
+## In state 137, spurious reduction of production list(comando) -> comando list(comando) 
+##
+
+Estado 129: Esperava por 'end' ou por else
+
+programa: PROGRAM PONTOVIRG BEGIN IF LITSTRING THEN BEGIN VIRG 
+##
+## Ends in an error in state: 110.
+##
+## comando_se -> IF expressao THEN BEGIN . list(comando) END option(__anonymous_0) [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## IF expressao THEN BEGIN 
+##
+
+Estado 110: Esperava por comandos ou por 'end'.
+
+programa: PROGRAM PONTOVIRG BEGIN IF LITSTRING THEN WHILE 
+##
+## Ends in an error in state: 109.
+##
+## comando_se -> IF expressao THEN . BEGIN list(comando) END option(__anonymous_0) [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## IF expressao THEN 
+##
+
+Estado 109: Esperava por 'begin'
+
+programa: PROGRAM PONTOVIRG BEGIN IF LITSTRING WHILE 
+##
+## Ends in an error in state: 108.
+##
+## comando_se -> IF expressao . THEN BEGIN list(comando) END option(__anonymous_0) [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+## expressao -> expressao . MAIS expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENOS expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . MULTIPLICA expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . DIVIDE expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . MODULO expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENOR expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . IGUAL expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENORIGUAL expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . MAIORIGUAL expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . DIFERENTE expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . MAIOR expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . E expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . OU expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+##
+## The known suffix of the stack is as follows:
+## IF expressao 
+##
+
+Estado 108: Esperava por uma operacao com outra expressao ou 'then'
+
+programa: PROGRAM PONTOVIRG BEGIN IF WHILE 
+##
+## Ends in an error in state: 107.
+##
+## comando_se -> IF . expressao THEN BEGIN list(comando) END option(__anonymous_0) [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## IF 
+##
+
+Estado 107: Esperava por expressao
+
+programa: PROGRAM PONTOVIRG BEGIN LEIA APAR LITSTRING FPAR WHILE 
+##
+## Ends in an error in state: 105.
+##
+## comando_entrada -> LEIA APAR separated_nonempty_list(VIRG,expressao) FPAR . PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## LEIA APAR separated_nonempty_list(VIRG,expressao) FPAR 
+##
+
+Estado 105:  Esperava ';'
+
+programa: PROGRAM PONTOVIRG BEGIN LEIA APAR WHILE 
+##
+## Ends in an error in state: 103.
+##
+## comando_entrada -> LEIA APAR . separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## LEIA APAR 
+##
+
+Estado 103:  Esperava por expressao.
+
+programa: PROGRAM PONTOVIRG BEGIN LEIA WHILE 
+##
+## Ends in an error in state: 102.
+##
+## comando_entrada -> LEIA . APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## LEIA 
+##
+
+Estado 102:  Esperava por '('
+
+programa: PROGRAM PONTOVIRG BEGIN LEIALN APAR LITSTRING FPAR WHILE 
+##
+## Ends in an error in state: 100.
+##
+## comando_entrada -> LEIALN APAR separated_nonempty_list(VIRG,expressao) FPAR . PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## LEIALN APAR separated_nonempty_list(VIRG,expressao) FPAR 
+##
+
+Estado 100: Esperava por ';'
+
+programa: PROGRAM PONTOVIRG BEGIN LEIALN APAR WHILE 
+##
+## Ends in an error in state: 98.
+##
+## comando_entrada -> LEIALN APAR . separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## LEIALN APAR 
+##
+
+Estado 98: Esperava por expressao.
+
+programa: PROGRAM PONTOVIRG BEGIN LEIALN WHILE 
+##
+## Ends in an error in state: 97.
+##
+## comando_entrada -> LEIALN . APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## LEIALN 
+##
+
+Estado 97: Esperava por '('
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING ATRIB BOOL PONTOVIRG VIRG 
+##
+## Ends in an error in state: 136.
+##
+## list(comando) -> comando . list(comando) [ ENDPROG END ]
+##
+## The known suffix of the stack is as follows:
+## comando 
+##
+
+Estado 136: Esperava por comandos.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING ATRIB LITSTRING WHILE 
+##
+## Ends in an error in state: 114.
+##
+## comando_atribuicao -> expressao ATRIB expressao . PONTOVIRG [ WHILE TO PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+## expressao -> expressao . MAIS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENOS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . MULTIPLICA expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . DIVIDE expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . MODULO expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENOR expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . IGUAL expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENORIGUAL expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . MAIORIGUAL expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . DIFERENTE expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . MAIOR expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . E expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+## expressao -> expressao . OU expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+##
+## The known suffix of the stack is as follows:
+## expressao ATRIB expressao 
+##
+
+Estado 114: Esperava por ';' ou por operador seguido de expressao.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING ATRIB WHILE 
+##
+## Ends in an error in state: 113.
+##
+## comando_atribuicao -> expressao ATRIB . expressao PONTOVIRG [ WHILE TO PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## expressao ATRIB 
+##
+
+Estado 113: Esperava expressao apos ':=".
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING DIFERENTE LITSTRING WHILE 
+##
+## Ends in an error in state: 73.
+##
+## expressao -> expressao . MAIS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MULTIPLICA expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIVIDE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MODULO expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . IGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIFERENTE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao DIFERENTE expressao . [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . E expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . OU expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao DIFERENTE expressao 
+##
+
+Estado 73: Esperava por nada ou operador seguido de expressao.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING DIFERENTE WHILE 
+##
+## Ends in an error in state: 72.
+##
+## expressao -> expressao DIFERENTE . expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao DIFERENTE 
+##
+
+Estado 72: Esperava expressao apos '<>'.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING DIVIDE WHILE 
+##
+## Ends in an error in state: 56.
+##
+## expressao -> expressao DIVIDE . expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao DIVIDE 
+##
+
+Estado 56: Esperava expressao apos '/'.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING E LITSTRING WHILE 
+##
+## Ends in an error in state: 71.
+##
+## expressao -> expressao . MAIS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MULTIPLICA expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIVIDE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MODULO expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . IGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIFERENTE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . E expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao E expressao . [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . OU expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao E expressao 
+##
+
+Estado 71: Esperava por nada ou operador seguido de expressao.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING E WHILE 
+##
+## Ends in an error in state: 70.
+##
+## expressao -> expressao E . expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao E 
+##
+
+Estado 70: Esperava expressao apos 'and'.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING IGUAL LITSTRING WHILE 
+##
+## Ends in an error in state: 69.
+##
+## expressao -> expressao . MAIS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MULTIPLICA expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIVIDE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MODULO expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . IGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao IGUAL expressao . [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIFERENTE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . E expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . OU expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao IGUAL expressao 
+##
+
+Estado 69: Esperava por nada ou operador seguido de expressao.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING IGUAL WHILE 
+##
+## Ends in an error in state: 68.
+##
+## expressao -> expressao IGUAL . expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao IGUAL 
+##
+
+Estado 68: Esperava expressao apos '='.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING MAIOR LITSTRING WHILE 
+##
+## Ends in an error in state: 67.
+##
+## expressao -> expressao . MAIS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MULTIPLICA expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIVIDE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MODULO expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . IGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIFERENTE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao MAIOR expressao . [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . E expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . OU expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao MAIOR expressao 
+##
+
+Estado 67: Esperava por nada ou operador seguido de expressao.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING MAIOR WHILE 
+##
+## Ends in an error in state: 66.
+##
+## expressao -> expressao MAIOR . expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao MAIOR 
+##
+
+Estado 66: Esperava expressao apos '>'.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING MAIORIGUAL LITSTRING WHILE 
+##
+## Ends in an error in state: 65.
+##
+## expressao -> expressao . MAIS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MULTIPLICA expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIVIDE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MODULO expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . IGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao MAIORIGUAL expressao . [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIFERENTE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . E expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . OU expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao MAIORIGUAL expressao 
+##
+
+Estado 65: Esperava por nada ou operador seguido de expressao.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING MAIORIGUAL WHILE 
+##
+## Ends in an error in state: 64.
+##
+## expressao -> expressao MAIORIGUAL . expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao MAIORIGUAL 
+##
+
+Estado 64: Esperava expressao apos '>='.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING MAIS LITSTRING WHILE 
+##
+## Ends in an error in state: 61.
+##
+## expressao -> expressao . MAIS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao MAIS expressao . [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MULTIPLICA expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIVIDE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MODULO expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . IGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIFERENTE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . E expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . OU expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao MAIS expressao 
+##
+
+Estado 61: Esperava por nada ou operador seguido de expressao.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING MAIS WHILE 
+##
+## Ends in an error in state: 60.
+##
+## expressao -> expressao MAIS . expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao MAIS 
+##
+
+Estado 60: Esperava expressao apos '+'.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING MENOR LITSTRING WHILE 
+##
+## Ends in an error in state: 63.
+##
+## expressao -> expressao . MAIS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MULTIPLICA expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIVIDE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MODULO expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao MENOR expressao . [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . IGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIFERENTE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . E expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . OU expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao MENOR expressao 
+##
+
+Estado 63: Esperava por nada ou operador seguido de expressao.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING MENOR WHILE 
+##
+## Ends in an error in state: 62.
+##
+## expressao -> expressao MENOR . expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao MENOR 
+##
+
+Estado 62: Esperava expressao apos '<'.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING MENORIGUAL LITSTRING WHILE 
+##
+## Ends in an error in state: 59.
+##
+## expressao -> expressao . MAIS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MULTIPLICA expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIVIDE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MODULO expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . IGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao MENORIGUAL expressao . [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIFERENTE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . E expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . OU expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao MENORIGUAL expressao 
+##
+
+Estado 59: Esperava por nada ou operador seguido de expressao.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING MENORIGUAL WHILE 
+##
+## Ends in an error in state: 58.
+##
+## expressao -> expressao MENORIGUAL . expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao MENORIGUAL 
+##
+
+Estado 58: Esperava expressao apos '<='.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING MENOS LITSTRING WHILE 
+##
+## Ends in an error in state: 55.
+##
+## expressao -> expressao . MAIS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao MENOS expressao . [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MULTIPLICA expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIVIDE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MODULO expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . IGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIFERENTE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . E expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . OU expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao MENOS expressao 
+##
+
+Estado 55: Esperava por nada ou operador seguido de expressao.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING MENOS WHILE 
+##
+## Ends in an error in state: 54.
+##
+## expressao -> expressao MENOS . expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao MENOS 
+##
+
+Estado 54: Esperava expressao apos '-'
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING MODULO WHILE 
+##
+## Ends in an error in state: 52.
+##
+## expressao -> expressao MODULO . expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao MODULO 
+##
+
+Estado 52: Esperava expressao apos 'mod'.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING MULTIPLICA WHILE 
+##
+## Ends in an error in state: 49.
+##
+## expressao -> expressao MULTIPLICA . expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao MULTIPLICA 
+##
+
+Estado 49: Esperava expressao apos '*'.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING OU LITSTRING WHILE 
+##
+## Ends in an error in state: 48.
+##
+## expressao -> expressao . MAIS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOS expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MULTIPLICA expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIVIDE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MODULO expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . IGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIORIGUAL expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIFERENTE expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIOR expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . E expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . OU expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao OU expressao . [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao OU expressao 
+##
+
+Estado 48: Esperava por nada ou operador seguido de expressao.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING OU WHILE 
+##
+## Ends in an error in state: 47.
+##
+## expressao -> expressao OU . expressao [ VIRG THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DO DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao OU 
+##
+
+Estado 47: Esperava expressao apos 'or'.
+
+programa: PROGRAM PONTOVIRG BEGIN LITSTRING WHILE 
+##
+## Ends in an error in state: 112.
+##
+## comando_atribuicao -> expressao . ATRIB expressao PONTOVIRG [ WHILE TO PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+## expressao -> expressao . MAIS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MULTIPLICA expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIVIDE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MODULO expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENOR expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . IGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MENORIGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIORIGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . DIFERENTE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . MAIOR expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . E expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ATRIB ]
+## expressao -> expressao . OU expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ATRIB ]
+##
+## The known suffix of the stack is as follows:
+## expressao 
+##
+
+Estado 112: Esperava ':=' ou uma operacao seguido de expressao seguido de ':='.
+
+programa: PROGRAM PONTOVIRG BEGIN PRINT APAR LITSTRING FPAR WHILE 
+##
+## Ends in an error in state: 95.
+##
+## comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR . PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR 
+##
+
+Estado 95: Esperava ';'.
+
+programa: PROGRAM PONTOVIRG BEGIN PRINT APAR WHILE 
+##
+## Ends in an error in state: 93.
+##
+## comando_saida -> PRINT APAR . separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## PRINT APAR 
+##
+
+Estado 93: 'print' nao pode ser vazio, falta argumentos.
+
+programa: PROGRAM PONTOVIRG BEGIN PRINT WHILE 
+##
+## Ends in an error in state: 92.
+##
+## comando_saida -> PRINT . APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## PRINT 
+##
+
+Estado 92: Esperava '('.
+
+programa: PROGRAM PONTOVIRG BEGIN PRINTLN APAR LITSTRING FPAR WHILE 
+##
+## Ends in an error in state: 87.
+##
+## comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR . PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR 
+##
+
+Estado 87:  Esperava ';'
+
+programa: PROGRAM PONTOVIRG BEGIN PRINTLN APAR LITSTRING VIRG WHILE 
+##
+## Ends in an error in state: 90.
+##
+## separated_nonempty_list(VIRG,expressao) -> expressao VIRG . separated_nonempty_list(VIRG,expressao) [ FPAR ]
+##
+## The known suffix of the stack is as follows:
+## expressao VIRG 
+##
+
+Estado 90: Esperava por mais expressoes.
+
+programa: PROGRAM PONTOVIRG BEGIN PRINTLN APAR LITSTRING WHILE 
+##
+## Ends in an error in state: 89.
+##
+## expressao -> expressao . MAIS expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENOS expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MULTIPLICA expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . DIVIDE expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MODULO expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENOR expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . IGUAL expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MENORIGUAL expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MAIORIGUAL expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . DIFERENTE expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . MAIOR expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . E expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## expressao -> expressao . OU expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+## separated_nonempty_list(VIRG,expressao) -> expressao . [ FPAR ]
+## separated_nonempty_list(VIRG,expressao) -> expressao . VIRG separated_nonempty_list(VIRG,expressao) [ FPAR ]
+##
+## The known suffix of the stack is as follows:
+## expressao 
+##
+
+Estado 89: Esperava por operacao com expressao ou ',' seguido de mais expressoes ou ')'
+
+programa: PROGRAM PONTOVIRG BEGIN PRINTLN APAR WHILE 
+##
+## Ends in an error in state: 85.
+##
+## comando_saida -> PRINTLN APAR . separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## PRINTLN APAR 
+##
+
+Estado 85: 'println' nao pode ser vazio, falta argumentos.
+
+programa: PROGRAM PONTOVIRG BEGIN PRINTLN WHILE 
+##
+## Ends in an error in state: 84.
+##
+## comando_saida -> PRINTLN . APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## PRINTLN 
+##
+
+Estado 84: Esperava '('
+
+programa: PROGRAM PONTOVIRG BEGIN VIRG 
+##
+## Ends in an error in state: 149.
+##
+## programa -> PROGRAM PONTOVIRG list(declaracao_funcao) list(declaracao) BEGIN . list(comando) ENDPROG EOF [ # ]
+##
+## The known suffix of the stack is as follows:
+## PROGRAM PONTOVIRG list(declaracao_funcao) list(declaracao) BEGIN 
+##
+
+Estado 149: Esperava por bloco de comandos.
+
+programa: PROGRAM PONTOVIRG BEGIN WHILE LITSTRING DO BEGIN END WHILE 
+##
+## Ends in an error in state: 140.
+##
+## comando_while -> WHILE expressao DO BEGIN list(comando) END . PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## WHILE expressao DO BEGIN list(comando) END 
+##
+
+Estado 140: Esperava ';'
+
+programa: PROGRAM PONTOVIRG BEGIN WHILE LITSTRING DO BEGIN ID APAR FPAR ENDPROG 
+##
+## Ends in an error in state: 139.
+##
+## comando_while -> WHILE expressao DO BEGIN list(comando) . END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## WHILE expressao DO BEGIN list(comando) 
+##
+## WARNING: This example involves spurious reductions.
+## This implies that, although the LR(1) items shown above provide an
+## accurate view of the past (what has been recognized so far), they
+## may provide an INCOMPLETE view of the future (what was expected next).
+## In state 128, spurious reduction of production comando_funcao -> chamada 
+## In state 123, spurious reduction of production comando -> comando_funcao 
+## In state 136, spurious reduction of production list(comando) -> 
+## In state 137, spurious reduction of production list(comando) -> comando list(comando) 
+##
+
+Estado 139: Esperava 'end'.
+
+programa: PROGRAM PONTOVIRG BEGIN WHILE LITSTRING DO BEGIN VIRG 
+##
+## Ends in an error in state: 83.
+##
+## comando_while -> WHILE expressao DO BEGIN . list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## WHILE expressao DO BEGIN 
+##
+
+Estado 83: Esperava bloco de comandos.
+
+programa: PROGRAM PONTOVIRG BEGIN WHILE LITSTRING DO WHILE 
+##
+## Ends in an error in state: 82.
+##
+## comando_while -> WHILE expressao DO . BEGIN list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## WHILE expressao DO 
+##
+
+Estado 82: Esperava 'begin'.
+
+programa: PROGRAM PONTOVIRG BEGIN WHILE LITSTRING WHILE 
+##
+## Ends in an error in state: 81.
+##
+## comando_while -> WHILE expressao . DO BEGIN list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+## expressao -> expressao . MAIS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . MENOS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . MULTIPLICA expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . DIVIDE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . MODULO expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . MENOR expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . IGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . MENORIGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . MAIORIGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . DIFERENTE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . MAIOR expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . E expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+## expressao -> expressao . OU expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+##
+## The known suffix of the stack is as follows:
+## WHILE expressao 
+##
+
+Estado 81: Esperava por operacao com a exprssao ou 'do'.
+
+programa: PROGRAM PONTOVIRG BEGIN WHILE WHILE 
+##
+## Ends in an error in state: 37.
+##
+## comando_while -> WHILE . expressao DO BEGIN list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END BOOL APAR ]
+##
+## The known suffix of the stack is as follows:
+## WHILE 
+##
+
+Estado 37: Esperava expressao de comparacao.
+
+programa: PROGRAM PONTOVIRG FUNCAO ID APAR DOISPONTOS STRING WHILE 
+##
+## Ends in an error in state: 10.
+##
+## list(parametros) -> parametros . list(parametros) [ FPAR ]
+##
+## The known suffix of the stack is as follows:
+## parametros 
+##
+
+Estado 10:  Eperava lista de parametros da funcao.
+
+programa: PROGRAM PONTOVIRG FUNCAO ID APAR DOISPONTOS WHILE 
+##
+## Ends in an error in state: 12.
+##
+## parametros -> loption(separated_nonempty_list(VIRG,ID)) DOISPONTOS . tipo_simples [ ID FPAR DOISPONTOS ]
+##
+## The known suffix of the stack is as follows:
+## loption(separated_nonempty_list(VIRG,ID)) DOISPONTOS 
+##
+
+Estado 12: Esperava tipo para funcao.
+
+programa: PROGRAM PONTOVIRG FUNCAO ID APAR FPAR DOISPONTOS BOOLEAN PONTOVIRG BEGIN END PONTOVIRG WHILE 
+##
+## Ends in an error in state: 153.
+##
+## list(declaracao_funcao) -> declaracao_funcao . list(declaracao_funcao) [ VAR ID BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## declaracao_funcao 
+##
+
+Estado 153: Esperava declaracoes de funcoes.
+
+programa: PROGRAM PONTOVIRG FUNCAO ID APAR FPAR DOISPONTOS STRING PONTOVIRG BEGIN END WHILE 
+##
+## Ends in an error in state: 143.
+##
+## declaracao_funcao -> FUNCAO ID APAR list(parametros) FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END . PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## FUNCAO ID APAR list(parametros) FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END 
+##
+
+Estado 143: Esperava ';'
+
+programa: PROGRAM PONTOVIRG FUNCAO ID APAR FPAR DOISPONTOS STRING PONTOVIRG BEGIN ID APAR FPAR ENDPROG 
+##
+## Ends in an error in state: 142.
+##
+## declaracao_funcao -> FUNCAO ID APAR list(parametros) FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) . END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## FUNCAO ID APAR list(parametros) FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) 
+##
+## WARNING: This example involves spurious reductions.
+## This implies that, although the LR(1) items shown above provide an
+## accurate view of the past (what has been recognized so far), they
+## may provide an INCOMPLETE view of the future (what was expected next).
+## In state 128, spurious reduction of production comando_funcao -> chamada 
+## In state 123, spurious reduction of production comando -> comando_funcao 
+## In state 136, spurious reduction of production list(comando) -> 
+## In state 137, spurious reduction of production list(comando) -> comando list(comando) 
+##
+
+Estado 142: Esperava 'end'.
+
+programa: PROGRAM PONTOVIRG FUNCAO ID APAR FPAR DOISPONTOS STRING PONTOVIRG BEGIN VIRG 
+##
+## Ends in an error in state: 36.
+##
+## declaracao_funcao -> FUNCAO ID APAR list(parametros) FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN . list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## FUNCAO ID APAR list(parametros) FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN 
+##
+
+Estado 36: Esperava bloco de comandos.
+
+programa: PROGRAM PONTOVIRG FUNCAO ID APAR FPAR DOISPONTOS STRING PONTOVIRG WHILE 
+##
+## Ends in an error in state: 24.
+##
+## declaracao_funcao -> FUNCAO ID APAR list(parametros) FPAR DOISPONTOS tipo_simples PONTOVIRG . list(declaracao) BEGIN list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## FUNCAO ID APAR list(parametros) FPAR DOISPONTOS tipo_simples PONTOVIRG 
+##
+
+Estado 24: Esperava declaracoes de variaveis da funcao.
+
+programa: PROGRAM PONTOVIRG FUNCAO ID APAR FPAR DOISPONTOS STRING WHILE 
+##
+## Ends in an error in state: 23.
+##
+## declaracao_funcao -> FUNCAO ID APAR list(parametros) FPAR DOISPONTOS tipo_simples . PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## FUNCAO ID APAR list(parametros) FPAR DOISPONTOS tipo_simples 
+##
+
+Estado 23: Esperava ';'
+
+programa: PROGRAM PONTOVIRG FUNCAO ID APAR FPAR DOISPONTOS WHILE 
+##
+## Ends in an error in state: 22.
+##
+## declaracao_funcao -> FUNCAO ID APAR list(parametros) FPAR DOISPONTOS . tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## FUNCAO ID APAR list(parametros) FPAR DOISPONTOS 
+##
+
+Estado 22:  Esperava por um tipo para funcao.
+
+programa: PROGRAM PONTOVIRG FUNCAO ID APAR FPAR WHILE 
+##
+## Ends in an error in state: 21.
+##
+## declaracao_funcao -> FUNCAO ID APAR list(parametros) FPAR . DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## FUNCAO ID APAR list(parametros) FPAR 
+##
+
+Estado 21:  Esperava por ':'
+
+programa: PROGRAM PONTOVIRG FUNCAO ID APAR WHILE 
+##
+## Ends in an error in state: 5.
+##
+## declaracao_funcao -> FUNCAO ID APAR . list(parametros) FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## FUNCAO ID APAR 
+##
+
+Estado 5: Esperava por lista de parametros.
+
+programa: PROGRAM PONTOVIRG FUNCAO ID WHILE 
+##
+## Ends in an error in state: 4.
+##
+## declaracao_funcao -> FUNCAO ID . APAR list(parametros) FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## FUNCAO ID 
+##
+
+Estado 4: Esperava por '('
+
+programa: PROGRAM PONTOVIRG FUNCAO WHILE 
+##
+## Ends in an error in state: 3.
+##
+## declaracao_funcao -> FUNCAO . ID APAR list(parametros) FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## FUNCAO 
+##
+
+Estado 3: Esperava por um identificador para funcao.
+
+programa: PROGRAM PONTOVIRG ID DOISPONTOS BOOLEAN PONTOVIRG WHILE 
+##
+## Ends in an error in state: 145.
+##
+## list(declaracao) -> declaracao . list(declaracao) [ BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## declaracao 
+##
+
+Estado 145: Esperava por declaracoes.
+
+programa: PROGRAM PONTOVIRG ID DOISPONTOS STRING WHILE 
+##
+## Ends in an error in state: 33.
+##
+## declaracao -> separated_nonempty_list(VIRG,ID) DOISPONTOS tipo . PONTOVIRG [ VAR ID BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## separated_nonempty_list(VIRG,ID) DOISPONTOS tipo 
+##
+
+Estado 33:  Esperava ';'
+
+programa: PROGRAM PONTOVIRG ID DOISPONTOS WHILE 
+##
+## Ends in an error in state: 32.
+##
+## declaracao -> separated_nonempty_list(VIRG,ID) DOISPONTOS . tipo PONTOVIRG [ VAR ID BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## separated_nonempty_list(VIRG,ID) DOISPONTOS 
+##
+
+Estado 32: Esperava por um tipo simples para variavel.
+
+programa: PROGRAM PONTOVIRG ID VIRG WHILE 
+##
+## Ends in an error in state: 7.
+##
+## separated_nonempty_list(VIRG,ID) -> ID VIRG . separated_nonempty_list(VIRG,ID) [ DOISPONTOS ]
+##
+## The known suffix of the stack is as follows:
+## ID VIRG 
+##
+
+Estado 7: Esperava por mais variaveis ou ':'
+
+programa: PROGRAM PONTOVIRG ID WHILE 
+##
+## Ends in an error in state: 6.
+##
+## separated_nonempty_list(VIRG,ID) -> ID . [ DOISPONTOS ]
+## separated_nonempty_list(VIRG,ID) -> ID . VIRG separated_nonempty_list(VIRG,ID) [ DOISPONTOS ]
+##
+## The known suffix of the stack is as follows:
+## ID 
+##
+
+Estado 6: Esperava por ':' ou mais variaveis.
+
+programa: PROGRAM PONTOVIRG VAR ID DOISPONTOS STRING WHILE 
+##
+## Ends in an error in state: 29.
+##
+## declaracao -> VAR separated_nonempty_list(VIRG,ID) DOISPONTOS tipo . PONTOVIRG [ VAR ID BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## VAR separated_nonempty_list(VIRG,ID) DOISPONTOS tipo 
+##
+
+Estado 29: Esperava ';'
+
+programa: PROGRAM PONTOVIRG VAR ID DOISPONTOS WHILE 
+##
+## Ends in an error in state: 27.
+##
+## declaracao -> VAR separated_nonempty_list(VIRG,ID) DOISPONTOS . tipo PONTOVIRG [ VAR ID BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## VAR separated_nonempty_list(VIRG,ID) DOISPONTOS 
+##
+
+Estado 27: Esperava por um tipo simples.
+
+programa: PROGRAM PONTOVIRG VAR WHILE 
+##
+## Ends in an error in state: 25.
+##
+## declaracao -> VAR . separated_nonempty_list(VIRG,ID) DOISPONTOS tipo PONTOVIRG [ VAR ID BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## VAR 
+##
+
+Estado 25: Esperava por variaveis.
+
+programa: PROGRAM PONTOVIRG WHILE 
+##
+## Ends in an error in state: 2.
+##
+## programa -> PROGRAM PONTOVIRG . list(declaracao_funcao) list(declaracao) BEGIN list(comando) ENDPROG EOF [ # ]
+##
+## The known suffix of the stack is as follows:
+## PROGRAM PONTOVIRG 
+##
+
+Estado 2: Esperava por declaracoes de funcoes ou variaveis.
+
+programa: PROGRAM WHILE 
+##
+## Ends in an error in state: 1.
+##
+## programa -> PROGRAM . PONTOVIRG list(declaracao_funcao) list(declaracao) BEGIN list(comando) ENDPROG EOF [ # ]
+##
+## The known suffix of the stack is as follows:
+## PROGRAM 
+##
+
+Estado 1: Esperava ';'
+
+programa: WHILE 
+##
+## Ends in an error in state: 0.
+##
+## programa' -> . programa [ # ]
+##
+## The known suffix of the stack is as follows:
+## 
+##
+
+Estado 0: Esperava por 'program' seguido de um identificador.
+

@@ -1,0 +1,133 @@
+(module
+ (type $FUNCSIG$ii (func (param i32) (result i32)))
+ (type $FUNCSIG$iii (func (param i32 i32) (result i32)))
+ (import "env" "printf" (func $printf (param i32 i32) (result i32)))
+ (import "env" "scanf" (func $scanf (param i32 i32) (result i32)))
+ (table 0 anyfunc)
+ (memory $0 1)
+ (data (i32.const 16) "Digite o primeiro n\c3\bamero: \00")
+ (data (i32.const 48) "%d\00")
+ (data (i32.const 64) "Digite o segundo n\c3\bamero: \00")
+ (data (i32.const 96) "O primeiro n\c3\bamero %d \c3\a9 maior que o segundo %d\00")
+ (data (i32.const 144) "O segundo n\c3\bamero %d \c3\a9 maior que o primeiro %d\00")
+ (export "memory" (memory $0))
+ (export "main" (func $main))
+ (func $main (; 2 ;) (result i32)
+  (local $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  (i32.store offset=4
+   (i32.const 0)
+   (tee_local $2
+    (i32.sub
+     (i32.load offset=4
+      (i32.const 0)
+     )
+     (i32.const 64)
+    )
+   )
+  )
+  (drop
+   (call $printf
+    (i32.const 16)
+    (i32.const 0)
+   )
+  )
+  (i32.store offset=48
+   (get_local $2)
+   (i32.add
+    (get_local $2)
+    (i32.const 60)
+   )
+  )
+  (drop
+   (call $scanf
+    (i32.const 48)
+    (i32.add
+     (get_local $2)
+     (i32.const 48)
+    )
+   )
+  )
+  (drop
+   (call $printf
+    (i32.const 64)
+    (i32.const 0)
+   )
+  )
+  (i32.store offset=32
+   (get_local $2)
+   (i32.add
+    (get_local $2)
+    (i32.const 56)
+   )
+  )
+  (drop
+   (call $scanf
+    (i32.const 48)
+    (i32.add
+     (get_local $2)
+     (i32.const 32)
+    )
+   )
+  )
+  (block $label$0
+   (block $label$1
+    (br_if $label$1
+     (i32.le_s
+      (tee_local $0
+       (i32.load offset=60
+        (get_local $2)
+       )
+      )
+      (tee_local $1
+       (i32.load offset=56
+        (get_local $2)
+       )
+      )
+     )
+    )
+    (i32.store offset=4
+     (get_local $2)
+     (get_local $1)
+    )
+    (i32.store
+     (get_local $2)
+     (get_local $0)
+    )
+    (drop
+     (call $printf
+      (i32.const 96)
+      (get_local $2)
+     )
+    )
+    (br $label$0)
+   )
+   (i32.store offset=20
+    (get_local $2)
+    (get_local $0)
+   )
+   (i32.store offset=16
+    (get_local $2)
+    (get_local $1)
+   )
+   (drop
+    (call $printf
+     (i32.const 144)
+     (i32.add
+      (get_local $2)
+      (i32.const 16)
+     )
+    )
+   )
+  )
+  (i32.store offset=4
+   (i32.const 0)
+   (i32.add
+    (get_local $2)
+    (i32.const 64)
+   )
+  )
+  (i32.const 0)
+ )
+)

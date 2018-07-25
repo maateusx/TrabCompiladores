@@ -1,0 +1,2307 @@
+State 0:
+programa' -> . programa [ # ]
+-- On PROGRAM shift to state 1
+-- On programa shift to state 168
+
+State 1:
+programa -> PROGRAM . ID PONTOVIRG list(declaracao_funcao) list(declaracao) BEGIN list(comando) ENDPROG EOF [ # ]
+-- On ID shift to state 2
+
+State 2:
+programa -> PROGRAM ID . PONTOVIRG list(declaracao_funcao) list(declaracao) BEGIN list(comando) ENDPROG EOF [ # ]
+-- On PONTOVIRG shift to state 3
+
+State 3:
+programa -> PROGRAM ID PONTOVIRG . list(declaracao_funcao) list(declaracao) BEGIN list(comando) ENDPROG EOF [ # ]
+-- On FUNCAO shift to state 4
+-- On list(declaracao_funcao) shift to state 160
+-- On declaracao_funcao shift to state 166
+-- On VAR reduce production list(declaracao_funcao) -> 
+-- On ID reduce production list(declaracao_funcao) -> 
+-- On BEGIN reduce production list(declaracao_funcao) -> 
+
+State 4:
+declaracao_funcao -> FUNCAO . ID APAR parametros FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+-- On ID shift to state 5
+
+State 5:
+declaracao_funcao -> FUNCAO ID . APAR parametros FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+-- On APAR shift to state 6
+
+State 6:
+declaracao_funcao -> FUNCAO ID APAR . parametros FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+-- On ID shift to state 7
+-- On separated_nonempty_list(VIRG,ID) shift to state 10
+-- On parametros shift to state 11
+-- On loption(separated_nonempty_list(VIRG,ID)) shift to state 157
+-- On DOISPONTOS reduce production loption(separated_nonempty_list(VIRG,ID)) -> 
+
+State 7:
+separated_nonempty_list(VIRG,ID) -> ID . [ DOISPONTOS ]
+separated_nonempty_list(VIRG,ID) -> ID . VIRG separated_nonempty_list(VIRG,ID) [ DOISPONTOS ]
+-- On VIRG shift to state 8
+-- On DOISPONTOS reduce production separated_nonempty_list(VIRG,ID) -> ID 
+
+State 8:
+separated_nonempty_list(VIRG,ID) -> ID VIRG . separated_nonempty_list(VIRG,ID) [ DOISPONTOS ]
+-- On ID shift to state 7
+-- On separated_nonempty_list(VIRG,ID) shift to state 9
+
+State 9:
+separated_nonempty_list(VIRG,ID) -> ID VIRG separated_nonempty_list(VIRG,ID) . [ DOISPONTOS ]
+-- On DOISPONTOS reduce production separated_nonempty_list(VIRG,ID) -> ID VIRG separated_nonempty_list(VIRG,ID) 
+
+State 10:
+loption(separated_nonempty_list(VIRG,ID)) -> separated_nonempty_list(VIRG,ID) . [ DOISPONTOS ]
+-- On DOISPONTOS reduce production loption(separated_nonempty_list(VIRG,ID)) -> separated_nonempty_list(VIRG,ID) 
+
+State 11:
+declaracao_funcao -> FUNCAO ID APAR parametros . FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+-- On FPAR shift to state 12
+
+State 12:
+declaracao_funcao -> FUNCAO ID APAR parametros FPAR . DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+-- On DOISPONTOS shift to state 13
+
+State 13:
+declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS . tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+-- On STRING shift to state 14
+-- On REAL shift to state 15
+-- On INTEGER shift to state 16
+-- On CHAR shift to state 17
+-- On BOOLEAN shift to state 18
+-- On tipo_simples shift to state 19
+
+State 14:
+tipo_simples -> STRING . [ PONTOVIRG FPAR ]
+-- On PONTOVIRG reduce production tipo_simples -> STRING 
+-- On FPAR reduce production tipo_simples -> STRING 
+
+State 15:
+tipo_simples -> REAL . [ PONTOVIRG FPAR ]
+-- On PONTOVIRG reduce production tipo_simples -> REAL 
+-- On FPAR reduce production tipo_simples -> REAL 
+
+State 16:
+tipo_simples -> INTEGER . [ PONTOVIRG FPAR ]
+-- On PONTOVIRG reduce production tipo_simples -> INTEGER 
+-- On FPAR reduce production tipo_simples -> INTEGER 
+
+State 17:
+tipo_simples -> CHAR . [ PONTOVIRG FPAR ]
+-- On PONTOVIRG reduce production tipo_simples -> CHAR 
+-- On FPAR reduce production tipo_simples -> CHAR 
+
+State 18:
+tipo_simples -> BOOLEAN . [ PONTOVIRG FPAR ]
+-- On PONTOVIRG reduce production tipo_simples -> BOOLEAN 
+-- On FPAR reduce production tipo_simples -> BOOLEAN 
+
+State 19:
+declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples . PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+-- On PONTOVIRG shift to state 20
+
+State 20:
+declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples PONTOVIRG . list(declaracao) BEGIN list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+-- On VAR shift to state 21
+-- On ID shift to state 7
+-- On separated_nonempty_list(VIRG,ID) shift to state 27
+-- On list(declaracao) shift to state 31
+-- On declaracao shift to state 155
+-- On BEGIN reduce production list(declaracao) -> 
+
+State 21:
+declaracao -> VAR . separated_nonempty_list(VIRG,ID) DOISPONTOS tipo PONTOVIRG [ VAR ID BEGIN ]
+-- On ID shift to state 7
+-- On separated_nonempty_list(VIRG,ID) shift to state 22
+
+State 22:
+declaracao -> VAR separated_nonempty_list(VIRG,ID) . DOISPONTOS tipo PONTOVIRG [ VAR ID BEGIN ]
+-- On DOISPONTOS shift to state 23
+
+State 23:
+declaracao -> VAR separated_nonempty_list(VIRG,ID) DOISPONTOS . tipo PONTOVIRG [ VAR ID BEGIN ]
+-- On STRING shift to state 14
+-- On REAL shift to state 15
+-- On INTEGER shift to state 16
+-- On CHAR shift to state 17
+-- On BOOLEAN shift to state 18
+-- On tipo_simples shift to state 24
+-- On tipo shift to state 25
+
+State 24:
+tipo -> tipo_simples . [ PONTOVIRG ]
+-- On PONTOVIRG reduce production tipo -> tipo_simples 
+
+State 25:
+declaracao -> VAR separated_nonempty_list(VIRG,ID) DOISPONTOS tipo . PONTOVIRG [ VAR ID BEGIN ]
+-- On PONTOVIRG shift to state 26
+
+State 26:
+declaracao -> VAR separated_nonempty_list(VIRG,ID) DOISPONTOS tipo PONTOVIRG . [ VAR ID BEGIN ]
+-- On VAR reduce production declaracao -> VAR separated_nonempty_list(VIRG,ID) DOISPONTOS tipo PONTOVIRG 
+-- On ID reduce production declaracao -> VAR separated_nonempty_list(VIRG,ID) DOISPONTOS tipo PONTOVIRG 
+-- On BEGIN reduce production declaracao -> VAR separated_nonempty_list(VIRG,ID) DOISPONTOS tipo PONTOVIRG 
+
+State 27:
+declaracao -> separated_nonempty_list(VIRG,ID) . DOISPONTOS tipo PONTOVIRG [ VAR ID BEGIN ]
+-- On DOISPONTOS shift to state 28
+
+State 28:
+declaracao -> separated_nonempty_list(VIRG,ID) DOISPONTOS . tipo PONTOVIRG [ VAR ID BEGIN ]
+-- On STRING shift to state 14
+-- On REAL shift to state 15
+-- On INTEGER shift to state 16
+-- On CHAR shift to state 17
+-- On BOOLEAN shift to state 18
+-- On tipo_simples shift to state 24
+-- On tipo shift to state 29
+
+State 29:
+declaracao -> separated_nonempty_list(VIRG,ID) DOISPONTOS tipo . PONTOVIRG [ VAR ID BEGIN ]
+-- On PONTOVIRG shift to state 30
+
+State 30:
+declaracao -> separated_nonempty_list(VIRG,ID) DOISPONTOS tipo PONTOVIRG . [ VAR ID BEGIN ]
+-- On VAR reduce production declaracao -> separated_nonempty_list(VIRG,ID) DOISPONTOS tipo PONTOVIRG 
+-- On ID reduce production declaracao -> separated_nonempty_list(VIRG,ID) DOISPONTOS tipo PONTOVIRG 
+-- On BEGIN reduce production declaracao -> separated_nonempty_list(VIRG,ID) DOISPONTOS tipo PONTOVIRG 
+
+State 31:
+declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) . BEGIN list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+-- On BEGIN shift to state 32
+
+State 32:
+declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN . list(comando) END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+-- On WHILE shift to state 33
+-- On PRINTLN shift to state 81
+-- On PRINT shift to state 86
+-- On LEIALN shift to state 91
+-- On LEIA shift to state 94
+-- On IF shift to state 97
+-- On ID shift to state 37
+-- On FOR shift to state 101
+-- On CASE shift to state 110
+-- On variavel shift to state 115
+-- On list(comando) shift to state 152
+-- On comando_while shift to state 119
+-- On comando_se shift to state 120
+-- On comando_saida shift to state 121
+-- On comando_funcao shift to state 122
+-- On comando_for shift to state 123
+-- On comando_entrada shift to state 124
+-- On comando_case shift to state 125
+-- On comando_atribuicao shift to state 126
+-- On comando shift to state 139
+-- On END reduce production list(comando) -> 
+
+State 33:
+comando_while -> WHILE . expressao DO BEGIN list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 78
+-- On comando_funcao shift to state 50
+
+State 34:
+expressao -> LITSTRING . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On VIRG reduce production expressao -> LITSTRING 
+-- On TO reduce production expressao -> LITSTRING 
+-- On THEN reduce production expressao -> LITSTRING 
+-- On PONTOVIRG reduce production expressao -> LITSTRING 
+-- On OU reduce production expressao -> LITSTRING 
+-- On MULTIPLICA reduce production expressao -> LITSTRING 
+-- On MODULO reduce production expressao -> LITSTRING 
+-- On MENOS reduce production expressao -> LITSTRING 
+-- On MENORIGUAL reduce production expressao -> LITSTRING 
+-- On MENOR reduce production expressao -> LITSTRING 
+-- On MAIS reduce production expressao -> LITSTRING 
+-- On MAIORIGUAL reduce production expressao -> LITSTRING 
+-- On MAIOR reduce production expressao -> LITSTRING 
+-- On IGUAL reduce production expressao -> LITSTRING 
+-- On FPAR reduce production expressao -> LITSTRING 
+-- On E reduce production expressao -> LITSTRING 
+-- On DOISPONTOS reduce production expressao -> LITSTRING 
+-- On DO reduce production expressao -> LITSTRING 
+-- On DIVIDE reduce production expressao -> LITSTRING 
+-- On DIFERENTE reduce production expressao -> LITSTRING 
+
+State 35:
+expressao -> LITREAL . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On VIRG reduce production expressao -> LITREAL 
+-- On TO reduce production expressao -> LITREAL 
+-- On THEN reduce production expressao -> LITREAL 
+-- On PONTOVIRG reduce production expressao -> LITREAL 
+-- On OU reduce production expressao -> LITREAL 
+-- On MULTIPLICA reduce production expressao -> LITREAL 
+-- On MODULO reduce production expressao -> LITREAL 
+-- On MENOS reduce production expressao -> LITREAL 
+-- On MENORIGUAL reduce production expressao -> LITREAL 
+-- On MENOR reduce production expressao -> LITREAL 
+-- On MAIS reduce production expressao -> LITREAL 
+-- On MAIORIGUAL reduce production expressao -> LITREAL 
+-- On MAIOR reduce production expressao -> LITREAL 
+-- On IGUAL reduce production expressao -> LITREAL 
+-- On FPAR reduce production expressao -> LITREAL 
+-- On E reduce production expressao -> LITREAL 
+-- On DOISPONTOS reduce production expressao -> LITREAL 
+-- On DO reduce production expressao -> LITREAL 
+-- On DIVIDE reduce production expressao -> LITREAL 
+-- On DIFERENTE reduce production expressao -> LITREAL 
+
+State 36:
+expressao -> LITINT . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On VIRG reduce production expressao -> LITINT 
+-- On TO reduce production expressao -> LITINT 
+-- On THEN reduce production expressao -> LITINT 
+-- On PONTOVIRG reduce production expressao -> LITINT 
+-- On OU reduce production expressao -> LITINT 
+-- On MULTIPLICA reduce production expressao -> LITINT 
+-- On MODULO reduce production expressao -> LITINT 
+-- On MENOS reduce production expressao -> LITINT 
+-- On MENORIGUAL reduce production expressao -> LITINT 
+-- On MENOR reduce production expressao -> LITINT 
+-- On MAIS reduce production expressao -> LITINT 
+-- On MAIORIGUAL reduce production expressao -> LITINT 
+-- On MAIOR reduce production expressao -> LITINT 
+-- On IGUAL reduce production expressao -> LITINT 
+-- On FPAR reduce production expressao -> LITINT 
+-- On E reduce production expressao -> LITINT 
+-- On DOISPONTOS reduce production expressao -> LITINT 
+-- On DO reduce production expressao -> LITINT 
+-- On DIVIDE reduce production expressao -> LITINT 
+-- On DIFERENTE reduce production expressao -> LITINT 
+
+State 37:
+comando_funcao -> ID . APAR option(__anonymous_0) FPAR [ WHILE VIRG TO THEN PRINTLN PRINT PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR LITSTRING LITREAL LITINT LEIALN LEIA IGUAL IF ID FPAR FOR ENDPROG END ELSE E DOISPONTOS DO DIVIDE DIFERENTE CASE APAR ]
+variavel -> ID . [ VIRG TO THEN PONTOVIRG PONTO OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ATRIB ]
+-- On APAR shift to state 38
+-- On VIRG reduce production variavel -> ID 
+-- On TO reduce production variavel -> ID 
+-- On THEN reduce production variavel -> ID 
+-- On PONTOVIRG reduce production variavel -> ID 
+-- On PONTO reduce production variavel -> ID 
+-- On OU reduce production variavel -> ID 
+-- On MULTIPLICA reduce production variavel -> ID 
+-- On MODULO reduce production variavel -> ID 
+-- On MENOS reduce production variavel -> ID 
+-- On MENORIGUAL reduce production variavel -> ID 
+-- On MENOR reduce production variavel -> ID 
+-- On MAIS reduce production variavel -> ID 
+-- On MAIORIGUAL reduce production variavel -> ID 
+-- On MAIOR reduce production variavel -> ID 
+-- On IGUAL reduce production variavel -> ID 
+-- On FPAR reduce production variavel -> ID 
+-- On E reduce production variavel -> ID 
+-- On DOISPONTOS reduce production variavel -> ID 
+-- On DO reduce production variavel -> ID 
+-- On DIVIDE reduce production variavel -> ID 
+-- On DIFERENTE reduce production variavel -> ID 
+-- On ATRIB reduce production variavel -> ID 
+
+State 38:
+comando_funcao -> ID APAR . option(__anonymous_0) FPAR [ WHILE VIRG TO THEN PRINTLN PRINT PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR LITSTRING LITREAL LITINT LEIALN LEIA IGUAL IF ID FPAR FOR ENDPROG END ELSE E DOISPONTOS DO DIVIDE DIFERENTE CASE APAR ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On separated_nonempty_list(VIRG,expressao) shift to state 72
+-- On option(__anonymous_0) shift to state 73
+-- On expressao shift to state 75
+-- On comando_funcao shift to state 50
+-- On FPAR reduce production option(__anonymous_0) -> 
+
+State 39:
+expressao -> APAR . expressao FPAR [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 43
+-- On comando_funcao shift to state 50
+
+State 40:
+expressao -> variavel . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+variavel -> variavel . PONTO ID [ VIRG TO THEN PONTOVIRG PONTO OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On PONTO shift to state 41
+-- On VIRG reduce production expressao -> variavel 
+-- On TO reduce production expressao -> variavel 
+-- On THEN reduce production expressao -> variavel 
+-- On PONTOVIRG reduce production expressao -> variavel 
+-- On OU reduce production expressao -> variavel 
+-- On MULTIPLICA reduce production expressao -> variavel 
+-- On MODULO reduce production expressao -> variavel 
+-- On MENOS reduce production expressao -> variavel 
+-- On MENORIGUAL reduce production expressao -> variavel 
+-- On MENOR reduce production expressao -> variavel 
+-- On MAIS reduce production expressao -> variavel 
+-- On MAIORIGUAL reduce production expressao -> variavel 
+-- On MAIOR reduce production expressao -> variavel 
+-- On IGUAL reduce production expressao -> variavel 
+-- On FPAR reduce production expressao -> variavel 
+-- On E reduce production expressao -> variavel 
+-- On DOISPONTOS reduce production expressao -> variavel 
+-- On DO reduce production expressao -> variavel 
+-- On DIVIDE reduce production expressao -> variavel 
+-- On DIFERENTE reduce production expressao -> variavel 
+
+State 41:
+variavel -> variavel PONTO . ID [ VIRG TO THEN PONTOVIRG PONTO OU OF MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ATRIB ]
+-- On ID shift to state 42
+
+State 42:
+variavel -> variavel PONTO ID . [ VIRG TO THEN PONTOVIRG PONTO OU OF MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ATRIB ]
+-- On VIRG reduce production variavel -> variavel PONTO ID 
+-- On TO reduce production variavel -> variavel PONTO ID 
+-- On THEN reduce production variavel -> variavel PONTO ID 
+-- On PONTOVIRG reduce production variavel -> variavel PONTO ID 
+-- On PONTO reduce production variavel -> variavel PONTO ID 
+-- On OU reduce production variavel -> variavel PONTO ID 
+-- On OF reduce production variavel -> variavel PONTO ID 
+-- On MULTIPLICA reduce production variavel -> variavel PONTO ID 
+-- On MODULO reduce production variavel -> variavel PONTO ID 
+-- On MENOS reduce production variavel -> variavel PONTO ID 
+-- On MENORIGUAL reduce production variavel -> variavel PONTO ID 
+-- On MENOR reduce production variavel -> variavel PONTO ID 
+-- On MAIS reduce production variavel -> variavel PONTO ID 
+-- On MAIORIGUAL reduce production variavel -> variavel PONTO ID 
+-- On MAIOR reduce production variavel -> variavel PONTO ID 
+-- On IGUAL reduce production variavel -> variavel PONTO ID 
+-- On FPAR reduce production variavel -> variavel PONTO ID 
+-- On E reduce production variavel -> variavel PONTO ID 
+-- On DOISPONTOS reduce production variavel -> variavel PONTO ID 
+-- On DO reduce production variavel -> variavel PONTO ID 
+-- On DIVIDE reduce production variavel -> variavel PONTO ID 
+-- On DIFERENTE reduce production variavel -> variavel PONTO ID 
+-- On ATRIB reduce production variavel -> variavel PONTO ID 
+
+State 43:
+expressao -> expressao . MAIS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> APAR expressao . FPAR [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On OU shift to state 44
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MENORIGUAL shift to state 55
+-- On MENOR shift to state 59
+-- On MAIS shift to state 51
+-- On MAIORIGUAL shift to state 61
+-- On MAIOR shift to state 63
+-- On IGUAL shift to state 65
+-- On FPAR shift to state 71
+-- On E shift to state 67
+-- On DIVIDE shift to state 57
+-- On DIFERENTE shift to state 69
+
+State 44:
+expressao -> expressao OU . expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 45
+-- On comando_funcao shift to state 50
+
+State 45:
+expressao -> expressao . MAIS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao OU expressao . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MENORIGUAL shift to state 55
+-- On MENOR shift to state 59
+-- On MAIS shift to state 51
+-- On MAIORIGUAL shift to state 61
+-- On MAIOR shift to state 63
+-- On IGUAL shift to state 65
+-- On E shift to state 67
+-- On DIVIDE shift to state 57
+-- On DIFERENTE shift to state 69
+-- On VIRG reduce production expressao -> expressao OU expressao 
+-- On TO reduce production expressao -> expressao OU expressao 
+-- On THEN reduce production expressao -> expressao OU expressao 
+-- On PONTOVIRG reduce production expressao -> expressao OU expressao 
+-- On OU reduce production expressao -> expressao OU expressao 
+-- On FPAR reduce production expressao -> expressao OU expressao 
+-- On DOISPONTOS reduce production expressao -> expressao OU expressao 
+-- On DO reduce production expressao -> expressao OU expressao 
+
+State 46:
+expressao -> expressao MULTIPLICA . expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 47
+-- On comando_funcao shift to state 50
+
+State 47:
+expressao -> expressao . MAIS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao MULTIPLICA expressao . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On MENOS shift to state 48
+-- On MAIS shift to state 51
+-- On VIRG reduce production expressao -> expressao MULTIPLICA expressao 
+-- On TO reduce production expressao -> expressao MULTIPLICA expressao 
+-- On THEN reduce production expressao -> expressao MULTIPLICA expressao 
+-- On PONTOVIRG reduce production expressao -> expressao MULTIPLICA expressao 
+-- On OU reduce production expressao -> expressao MULTIPLICA expressao 
+-- On MULTIPLICA reduce production expressao -> expressao MULTIPLICA expressao 
+-- On MODULO reduce production expressao -> expressao MULTIPLICA expressao 
+-- On MENORIGUAL reduce production expressao -> expressao MULTIPLICA expressao 
+-- On MENOR reduce production expressao -> expressao MULTIPLICA expressao 
+-- On MAIORIGUAL reduce production expressao -> expressao MULTIPLICA expressao 
+-- On MAIOR reduce production expressao -> expressao MULTIPLICA expressao 
+-- On IGUAL reduce production expressao -> expressao MULTIPLICA expressao 
+-- On FPAR reduce production expressao -> expressao MULTIPLICA expressao 
+-- On E reduce production expressao -> expressao MULTIPLICA expressao 
+-- On DOISPONTOS reduce production expressao -> expressao MULTIPLICA expressao 
+-- On DO reduce production expressao -> expressao MULTIPLICA expressao 
+-- On DIVIDE reduce production expressao -> expressao MULTIPLICA expressao 
+-- On DIFERENTE reduce production expressao -> expressao MULTIPLICA expressao 
+
+State 48:
+expressao -> expressao MENOS . expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 49
+-- On comando_funcao shift to state 50
+
+State 49:
+expressao -> expressao . MAIS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao MENOS expressao . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On VIRG reduce production expressao -> expressao MENOS expressao 
+-- On TO reduce production expressao -> expressao MENOS expressao 
+-- On THEN reduce production expressao -> expressao MENOS expressao 
+-- On PONTOVIRG reduce production expressao -> expressao MENOS expressao 
+-- On OU reduce production expressao -> expressao MENOS expressao 
+-- On MULTIPLICA reduce production expressao -> expressao MENOS expressao 
+-- On MODULO reduce production expressao -> expressao MENOS expressao 
+-- On MENOS reduce production expressao -> expressao MENOS expressao 
+-- On MENORIGUAL reduce production expressao -> expressao MENOS expressao 
+-- On MENOR reduce production expressao -> expressao MENOS expressao 
+-- On MAIS reduce production expressao -> expressao MENOS expressao 
+-- On MAIORIGUAL reduce production expressao -> expressao MENOS expressao 
+-- On MAIOR reduce production expressao -> expressao MENOS expressao 
+-- On IGUAL reduce production expressao -> expressao MENOS expressao 
+-- On FPAR reduce production expressao -> expressao MENOS expressao 
+-- On E reduce production expressao -> expressao MENOS expressao 
+-- On DOISPONTOS reduce production expressao -> expressao MENOS expressao 
+-- On DO reduce production expressao -> expressao MENOS expressao 
+-- On DIVIDE reduce production expressao -> expressao MENOS expressao 
+-- On DIFERENTE reduce production expressao -> expressao MENOS expressao 
+
+State 50:
+expressao -> comando_funcao . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On VIRG reduce production expressao -> comando_funcao 
+-- On TO reduce production expressao -> comando_funcao 
+-- On THEN reduce production expressao -> comando_funcao 
+-- On PONTOVIRG reduce production expressao -> comando_funcao 
+-- On OU reduce production expressao -> comando_funcao 
+-- On MULTIPLICA reduce production expressao -> comando_funcao 
+-- On MODULO reduce production expressao -> comando_funcao 
+-- On MENOS reduce production expressao -> comando_funcao 
+-- On MENORIGUAL reduce production expressao -> comando_funcao 
+-- On MENOR reduce production expressao -> comando_funcao 
+-- On MAIS reduce production expressao -> comando_funcao 
+-- On MAIORIGUAL reduce production expressao -> comando_funcao 
+-- On MAIOR reduce production expressao -> comando_funcao 
+-- On IGUAL reduce production expressao -> comando_funcao 
+-- On FPAR reduce production expressao -> comando_funcao 
+-- On E reduce production expressao -> comando_funcao 
+-- On DOISPONTOS reduce production expressao -> comando_funcao 
+-- On DO reduce production expressao -> comando_funcao 
+-- On DIVIDE reduce production expressao -> comando_funcao 
+-- On DIFERENTE reduce production expressao -> comando_funcao 
+
+State 51:
+expressao -> expressao MAIS . expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 52
+-- On comando_funcao shift to state 50
+
+State 52:
+expressao -> expressao . MAIS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao MAIS expressao . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On VIRG reduce production expressao -> expressao MAIS expressao 
+-- On TO reduce production expressao -> expressao MAIS expressao 
+-- On THEN reduce production expressao -> expressao MAIS expressao 
+-- On PONTOVIRG reduce production expressao -> expressao MAIS expressao 
+-- On OU reduce production expressao -> expressao MAIS expressao 
+-- On MULTIPLICA reduce production expressao -> expressao MAIS expressao 
+-- On MODULO reduce production expressao -> expressao MAIS expressao 
+-- On MENOS reduce production expressao -> expressao MAIS expressao 
+-- On MENORIGUAL reduce production expressao -> expressao MAIS expressao 
+-- On MENOR reduce production expressao -> expressao MAIS expressao 
+-- On MAIS reduce production expressao -> expressao MAIS expressao 
+-- On MAIORIGUAL reduce production expressao -> expressao MAIS expressao 
+-- On MAIOR reduce production expressao -> expressao MAIS expressao 
+-- On IGUAL reduce production expressao -> expressao MAIS expressao 
+-- On FPAR reduce production expressao -> expressao MAIS expressao 
+-- On E reduce production expressao -> expressao MAIS expressao 
+-- On DOISPONTOS reduce production expressao -> expressao MAIS expressao 
+-- On DO reduce production expressao -> expressao MAIS expressao 
+-- On DIVIDE reduce production expressao -> expressao MAIS expressao 
+-- On DIFERENTE reduce production expressao -> expressao MAIS expressao 
+
+State 53:
+expressao -> expressao MODULO . expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 54
+-- On comando_funcao shift to state 50
+
+State 54:
+expressao -> expressao . MAIS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao MODULO expressao . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On MENOS shift to state 48
+-- On MAIS shift to state 51
+-- On VIRG reduce production expressao -> expressao MODULO expressao 
+-- On TO reduce production expressao -> expressao MODULO expressao 
+-- On THEN reduce production expressao -> expressao MODULO expressao 
+-- On PONTOVIRG reduce production expressao -> expressao MODULO expressao 
+-- On OU reduce production expressao -> expressao MODULO expressao 
+-- On MULTIPLICA reduce production expressao -> expressao MODULO expressao 
+-- On MODULO reduce production expressao -> expressao MODULO expressao 
+-- On MENORIGUAL reduce production expressao -> expressao MODULO expressao 
+-- On MENOR reduce production expressao -> expressao MODULO expressao 
+-- On MAIORIGUAL reduce production expressao -> expressao MODULO expressao 
+-- On MAIOR reduce production expressao -> expressao MODULO expressao 
+-- On IGUAL reduce production expressao -> expressao MODULO expressao 
+-- On FPAR reduce production expressao -> expressao MODULO expressao 
+-- On E reduce production expressao -> expressao MODULO expressao 
+-- On DOISPONTOS reduce production expressao -> expressao MODULO expressao 
+-- On DO reduce production expressao -> expressao MODULO expressao 
+-- On DIVIDE reduce production expressao -> expressao MODULO expressao 
+-- On DIFERENTE reduce production expressao -> expressao MODULO expressao 
+
+State 55:
+expressao -> expressao MENORIGUAL . expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 56
+-- On comando_funcao shift to state 50
+
+State 56:
+expressao -> expressao . MAIS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao MENORIGUAL expressao . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MAIS shift to state 51
+-- On DIVIDE shift to state 57
+-- On VIRG reduce production expressao -> expressao MENORIGUAL expressao 
+-- On TO reduce production expressao -> expressao MENORIGUAL expressao 
+-- On THEN reduce production expressao -> expressao MENORIGUAL expressao 
+-- On PONTOVIRG reduce production expressao -> expressao MENORIGUAL expressao 
+-- On OU reduce production expressao -> expressao MENORIGUAL expressao 
+-- On MENORIGUAL reduce production expressao -> expressao MENORIGUAL expressao 
+-- On MENOR reduce production expressao -> expressao MENORIGUAL expressao 
+-- On MAIORIGUAL reduce production expressao -> expressao MENORIGUAL expressao 
+-- On MAIOR reduce production expressao -> expressao MENORIGUAL expressao 
+-- On IGUAL reduce production expressao -> expressao MENORIGUAL expressao 
+-- On FPAR reduce production expressao -> expressao MENORIGUAL expressao 
+-- On E reduce production expressao -> expressao MENORIGUAL expressao 
+-- On DOISPONTOS reduce production expressao -> expressao MENORIGUAL expressao 
+-- On DO reduce production expressao -> expressao MENORIGUAL expressao 
+-- On DIFERENTE reduce production expressao -> expressao MENORIGUAL expressao 
+
+State 57:
+expressao -> expressao DIVIDE . expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 58
+-- On comando_funcao shift to state 50
+
+State 58:
+expressao -> expressao . MAIS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao DIVIDE expressao . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On MENOS shift to state 48
+-- On MAIS shift to state 51
+-- On VIRG reduce production expressao -> expressao DIVIDE expressao 
+-- On TO reduce production expressao -> expressao DIVIDE expressao 
+-- On THEN reduce production expressao -> expressao DIVIDE expressao 
+-- On PONTOVIRG reduce production expressao -> expressao DIVIDE expressao 
+-- On OU reduce production expressao -> expressao DIVIDE expressao 
+-- On MULTIPLICA reduce production expressao -> expressao DIVIDE expressao 
+-- On MODULO reduce production expressao -> expressao DIVIDE expressao 
+-- On MENORIGUAL reduce production expressao -> expressao DIVIDE expressao 
+-- On MENOR reduce production expressao -> expressao DIVIDE expressao 
+-- On MAIORIGUAL reduce production expressao -> expressao DIVIDE expressao 
+-- On MAIOR reduce production expressao -> expressao DIVIDE expressao 
+-- On IGUAL reduce production expressao -> expressao DIVIDE expressao 
+-- On FPAR reduce production expressao -> expressao DIVIDE expressao 
+-- On E reduce production expressao -> expressao DIVIDE expressao 
+-- On DOISPONTOS reduce production expressao -> expressao DIVIDE expressao 
+-- On DO reduce production expressao -> expressao DIVIDE expressao 
+-- On DIVIDE reduce production expressao -> expressao DIVIDE expressao 
+-- On DIFERENTE reduce production expressao -> expressao DIVIDE expressao 
+
+State 59:
+expressao -> expressao MENOR . expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 60
+-- On comando_funcao shift to state 50
+
+State 60:
+expressao -> expressao . MAIS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao MENOR expressao . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MAIS shift to state 51
+-- On DIVIDE shift to state 57
+-- On VIRG reduce production expressao -> expressao MENOR expressao 
+-- On TO reduce production expressao -> expressao MENOR expressao 
+-- On THEN reduce production expressao -> expressao MENOR expressao 
+-- On PONTOVIRG reduce production expressao -> expressao MENOR expressao 
+-- On OU reduce production expressao -> expressao MENOR expressao 
+-- On MENORIGUAL reduce production expressao -> expressao MENOR expressao 
+-- On MENOR reduce production expressao -> expressao MENOR expressao 
+-- On MAIORIGUAL reduce production expressao -> expressao MENOR expressao 
+-- On MAIOR reduce production expressao -> expressao MENOR expressao 
+-- On IGUAL reduce production expressao -> expressao MENOR expressao 
+-- On FPAR reduce production expressao -> expressao MENOR expressao 
+-- On E reduce production expressao -> expressao MENOR expressao 
+-- On DOISPONTOS reduce production expressao -> expressao MENOR expressao 
+-- On DO reduce production expressao -> expressao MENOR expressao 
+-- On DIFERENTE reduce production expressao -> expressao MENOR expressao 
+
+State 61:
+expressao -> expressao MAIORIGUAL . expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 62
+-- On comando_funcao shift to state 50
+
+State 62:
+expressao -> expressao . MAIS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao MAIORIGUAL expressao . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MAIS shift to state 51
+-- On DIVIDE shift to state 57
+-- On VIRG reduce production expressao -> expressao MAIORIGUAL expressao 
+-- On TO reduce production expressao -> expressao MAIORIGUAL expressao 
+-- On THEN reduce production expressao -> expressao MAIORIGUAL expressao 
+-- On PONTOVIRG reduce production expressao -> expressao MAIORIGUAL expressao 
+-- On OU reduce production expressao -> expressao MAIORIGUAL expressao 
+-- On MENORIGUAL reduce production expressao -> expressao MAIORIGUAL expressao 
+-- On MENOR reduce production expressao -> expressao MAIORIGUAL expressao 
+-- On MAIORIGUAL reduce production expressao -> expressao MAIORIGUAL expressao 
+-- On MAIOR reduce production expressao -> expressao MAIORIGUAL expressao 
+-- On IGUAL reduce production expressao -> expressao MAIORIGUAL expressao 
+-- On FPAR reduce production expressao -> expressao MAIORIGUAL expressao 
+-- On E reduce production expressao -> expressao MAIORIGUAL expressao 
+-- On DOISPONTOS reduce production expressao -> expressao MAIORIGUAL expressao 
+-- On DO reduce production expressao -> expressao MAIORIGUAL expressao 
+-- On DIFERENTE reduce production expressao -> expressao MAIORIGUAL expressao 
+
+State 63:
+expressao -> expressao MAIOR . expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 64
+-- On comando_funcao shift to state 50
+
+State 64:
+expressao -> expressao . MAIS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao MAIOR expressao . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MAIS shift to state 51
+-- On DIVIDE shift to state 57
+-- On VIRG reduce production expressao -> expressao MAIOR expressao 
+-- On TO reduce production expressao -> expressao MAIOR expressao 
+-- On THEN reduce production expressao -> expressao MAIOR expressao 
+-- On PONTOVIRG reduce production expressao -> expressao MAIOR expressao 
+-- On OU reduce production expressao -> expressao MAIOR expressao 
+-- On MENORIGUAL reduce production expressao -> expressao MAIOR expressao 
+-- On MENOR reduce production expressao -> expressao MAIOR expressao 
+-- On MAIORIGUAL reduce production expressao -> expressao MAIOR expressao 
+-- On MAIOR reduce production expressao -> expressao MAIOR expressao 
+-- On IGUAL reduce production expressao -> expressao MAIOR expressao 
+-- On FPAR reduce production expressao -> expressao MAIOR expressao 
+-- On E reduce production expressao -> expressao MAIOR expressao 
+-- On DOISPONTOS reduce production expressao -> expressao MAIOR expressao 
+-- On DO reduce production expressao -> expressao MAIOR expressao 
+-- On DIFERENTE reduce production expressao -> expressao MAIOR expressao 
+
+State 65:
+expressao -> expressao IGUAL . expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 66
+-- On comando_funcao shift to state 50
+
+State 66:
+expressao -> expressao . MAIS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao IGUAL expressao . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MAIS shift to state 51
+-- On DIVIDE shift to state 57
+-- On VIRG reduce production expressao -> expressao IGUAL expressao 
+-- On TO reduce production expressao -> expressao IGUAL expressao 
+-- On THEN reduce production expressao -> expressao IGUAL expressao 
+-- On PONTOVIRG reduce production expressao -> expressao IGUAL expressao 
+-- On OU reduce production expressao -> expressao IGUAL expressao 
+-- On MENORIGUAL reduce production expressao -> expressao IGUAL expressao 
+-- On MENOR reduce production expressao -> expressao IGUAL expressao 
+-- On MAIORIGUAL reduce production expressao -> expressao IGUAL expressao 
+-- On MAIOR reduce production expressao -> expressao IGUAL expressao 
+-- On IGUAL reduce production expressao -> expressao IGUAL expressao 
+-- On FPAR reduce production expressao -> expressao IGUAL expressao 
+-- On E reduce production expressao -> expressao IGUAL expressao 
+-- On DOISPONTOS reduce production expressao -> expressao IGUAL expressao 
+-- On DO reduce production expressao -> expressao IGUAL expressao 
+-- On DIFERENTE reduce production expressao -> expressao IGUAL expressao 
+
+State 67:
+expressao -> expressao E . expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 68
+-- On comando_funcao shift to state 50
+
+State 68:
+expressao -> expressao . MAIS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao E expressao . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MENORIGUAL shift to state 55
+-- On MENOR shift to state 59
+-- On MAIS shift to state 51
+-- On MAIORIGUAL shift to state 61
+-- On MAIOR shift to state 63
+-- On IGUAL shift to state 65
+-- On DIVIDE shift to state 57
+-- On DIFERENTE shift to state 69
+-- On VIRG reduce production expressao -> expressao E expressao 
+-- On TO reduce production expressao -> expressao E expressao 
+-- On THEN reduce production expressao -> expressao E expressao 
+-- On PONTOVIRG reduce production expressao -> expressao E expressao 
+-- On OU reduce production expressao -> expressao E expressao 
+-- On FPAR reduce production expressao -> expressao E expressao 
+-- On E reduce production expressao -> expressao E expressao 
+-- On DOISPONTOS reduce production expressao -> expressao E expressao 
+-- On DO reduce production expressao -> expressao E expressao 
+
+State 69:
+expressao -> expressao DIFERENTE . expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 70
+-- On comando_funcao shift to state 50
+
+State 70:
+expressao -> expressao . MAIS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao DIFERENTE expressao . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MAIS shift to state 51
+-- On DIVIDE shift to state 57
+-- On VIRG reduce production expressao -> expressao DIFERENTE expressao 
+-- On TO reduce production expressao -> expressao DIFERENTE expressao 
+-- On THEN reduce production expressao -> expressao DIFERENTE expressao 
+-- On PONTOVIRG reduce production expressao -> expressao DIFERENTE expressao 
+-- On OU reduce production expressao -> expressao DIFERENTE expressao 
+-- On MENORIGUAL reduce production expressao -> expressao DIFERENTE expressao 
+-- On MENOR reduce production expressao -> expressao DIFERENTE expressao 
+-- On MAIORIGUAL reduce production expressao -> expressao DIFERENTE expressao 
+-- On MAIOR reduce production expressao -> expressao DIFERENTE expressao 
+-- On IGUAL reduce production expressao -> expressao DIFERENTE expressao 
+-- On FPAR reduce production expressao -> expressao DIFERENTE expressao 
+-- On E reduce production expressao -> expressao DIFERENTE expressao 
+-- On DOISPONTOS reduce production expressao -> expressao DIFERENTE expressao 
+-- On DO reduce production expressao -> expressao DIFERENTE expressao 
+-- On DIFERENTE reduce production expressao -> expressao DIFERENTE expressao 
+
+State 71:
+expressao -> APAR expressao FPAR . [ VIRG TO THEN PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DOISPONTOS DO DIVIDE DIFERENTE ]
+-- On VIRG reduce production expressao -> APAR expressao FPAR 
+-- On TO reduce production expressao -> APAR expressao FPAR 
+-- On THEN reduce production expressao -> APAR expressao FPAR 
+-- On PONTOVIRG reduce production expressao -> APAR expressao FPAR 
+-- On OU reduce production expressao -> APAR expressao FPAR 
+-- On MULTIPLICA reduce production expressao -> APAR expressao FPAR 
+-- On MODULO reduce production expressao -> APAR expressao FPAR 
+-- On MENOS reduce production expressao -> APAR expressao FPAR 
+-- On MENORIGUAL reduce production expressao -> APAR expressao FPAR 
+-- On MENOR reduce production expressao -> APAR expressao FPAR 
+-- On MAIS reduce production expressao -> APAR expressao FPAR 
+-- On MAIORIGUAL reduce production expressao -> APAR expressao FPAR 
+-- On MAIOR reduce production expressao -> APAR expressao FPAR 
+-- On IGUAL reduce production expressao -> APAR expressao FPAR 
+-- On FPAR reduce production expressao -> APAR expressao FPAR 
+-- On E reduce production expressao -> APAR expressao FPAR 
+-- On DOISPONTOS reduce production expressao -> APAR expressao FPAR 
+-- On DO reduce production expressao -> APAR expressao FPAR 
+-- On DIVIDE reduce production expressao -> APAR expressao FPAR 
+-- On DIFERENTE reduce production expressao -> APAR expressao FPAR 
+
+State 72:
+option(__anonymous_0) -> separated_nonempty_list(VIRG,expressao) . [ FPAR ]
+-- On FPAR reduce production option(__anonymous_0) -> separated_nonempty_list(VIRG,expressao) 
+
+State 73:
+comando_funcao -> ID APAR option(__anonymous_0) . FPAR [ WHILE VIRG TO THEN PRINTLN PRINT PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR LITSTRING LITREAL LITINT LEIALN LEIA IGUAL IF ID FPAR FOR ENDPROG END ELSE E DOISPONTOS DO DIVIDE DIFERENTE CASE APAR ]
+-- On FPAR shift to state 74
+
+State 74:
+comando_funcao -> ID APAR option(__anonymous_0) FPAR . [ WHILE VIRG TO THEN PRINTLN PRINT PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR LITSTRING LITREAL LITINT LEIALN LEIA IGUAL IF ID FPAR FOR ENDPROG END ELSE E DOISPONTOS DO DIVIDE DIFERENTE CASE APAR ]
+-- On WHILE reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On VIRG reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On TO reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On THEN reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On PRINTLN reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On PRINT reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On PONTOVIRG reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On OU reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On MULTIPLICA reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On MODULO reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On MENOS reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On MENORIGUAL reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On MENOR reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On MAIS reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On MAIORIGUAL reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On MAIOR reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On LITSTRING reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On LITREAL reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On LITINT reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On LEIALN reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On LEIA reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On IGUAL reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On IF reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On ID reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On FPAR reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On FOR reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On ENDPROG reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On END reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On ELSE reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On E reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On DOISPONTOS reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On DO reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On DIVIDE reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On DIFERENTE reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On CASE reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+-- On APAR reduce production comando_funcao -> ID APAR option(__anonymous_0) FPAR 
+
+State 75:
+expressao -> expressao . MAIS expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ VIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR E DIVIDE DIFERENTE ]
+separated_nonempty_list(VIRG,expressao) -> expressao . [ FPAR ]
+separated_nonempty_list(VIRG,expressao) -> expressao . VIRG separated_nonempty_list(VIRG,expressao) [ FPAR ]
+-- On VIRG shift to state 76
+-- On OU shift to state 44
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MENORIGUAL shift to state 55
+-- On MENOR shift to state 59
+-- On MAIS shift to state 51
+-- On MAIORIGUAL shift to state 61
+-- On MAIOR shift to state 63
+-- On IGUAL shift to state 65
+-- On E shift to state 67
+-- On DIVIDE shift to state 57
+-- On DIFERENTE shift to state 69
+-- On FPAR reduce production separated_nonempty_list(VIRG,expressao) -> expressao 
+
+State 76:
+separated_nonempty_list(VIRG,expressao) -> expressao VIRG . separated_nonempty_list(VIRG,expressao) [ FPAR ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On separated_nonempty_list(VIRG,expressao) shift to state 77
+-- On expressao shift to state 75
+-- On comando_funcao shift to state 50
+
+State 77:
+separated_nonempty_list(VIRG,expressao) -> expressao VIRG separated_nonempty_list(VIRG,expressao) . [ FPAR ]
+-- On FPAR reduce production separated_nonempty_list(VIRG,expressao) -> expressao VIRG separated_nonempty_list(VIRG,expressao) 
+
+State 78:
+comando_while -> WHILE expressao . DO BEGIN list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+expressao -> expressao . MAIS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+-- On OU shift to state 44
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MENORIGUAL shift to state 55
+-- On MENOR shift to state 59
+-- On MAIS shift to state 51
+-- On MAIORIGUAL shift to state 61
+-- On MAIOR shift to state 63
+-- On IGUAL shift to state 65
+-- On E shift to state 67
+-- On DO shift to state 79
+-- On DIVIDE shift to state 57
+-- On DIFERENTE shift to state 69
+
+State 79:
+comando_while -> WHILE expressao DO . BEGIN list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On BEGIN shift to state 80
+
+State 80:
+comando_while -> WHILE expressao DO BEGIN . list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE shift to state 33
+-- On PRINTLN shift to state 81
+-- On PRINT shift to state 86
+-- On LEIALN shift to state 91
+-- On LEIA shift to state 94
+-- On IF shift to state 97
+-- On ID shift to state 37
+-- On FOR shift to state 101
+-- On CASE shift to state 110
+-- On variavel shift to state 115
+-- On list(comando) shift to state 149
+-- On comando_while shift to state 119
+-- On comando_se shift to state 120
+-- On comando_saida shift to state 121
+-- On comando_funcao shift to state 122
+-- On comando_for shift to state 123
+-- On comando_entrada shift to state 124
+-- On comando_case shift to state 125
+-- On comando_atribuicao shift to state 126
+-- On comando shift to state 139
+-- On END reduce production list(comando) -> 
+
+State 81:
+comando_saida -> PRINTLN . APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On APAR shift to state 82
+
+State 82:
+comando_saida -> PRINTLN APAR . separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On separated_nonempty_list(VIRG,expressao) shift to state 83
+-- On expressao shift to state 75
+-- On comando_funcao shift to state 50
+
+State 83:
+comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) . FPAR PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On FPAR shift to state 84
+
+State 84:
+comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR . PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On PONTOVIRG shift to state 85
+
+State 85:
+comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On PRINTLN reduce production comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On PRINT reduce production comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On LITSTRING reduce production comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On LITREAL reduce production comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On LITINT reduce production comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On LEIALN reduce production comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On LEIA reduce production comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On IF reduce production comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On ID reduce production comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On FOR reduce production comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On ENDPROG reduce production comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On END reduce production comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On ELSE reduce production comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On CASE reduce production comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On APAR reduce production comando_saida -> PRINTLN APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+
+State 86:
+comando_saida -> PRINT . APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On APAR shift to state 87
+
+State 87:
+comando_saida -> PRINT APAR . separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On separated_nonempty_list(VIRG,expressao) shift to state 88
+-- On expressao shift to state 75
+-- On comando_funcao shift to state 50
+
+State 88:
+comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) . FPAR PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On FPAR shift to state 89
+
+State 89:
+comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR . PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On PONTOVIRG shift to state 90
+
+State 90:
+comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On PRINTLN reduce production comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On PRINT reduce production comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On LITSTRING reduce production comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On LITREAL reduce production comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On LITINT reduce production comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On LEIALN reduce production comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On LEIA reduce production comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On IF reduce production comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On ID reduce production comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On FOR reduce production comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On ENDPROG reduce production comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On END reduce production comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On ELSE reduce production comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On CASE reduce production comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+-- On APAR reduce production comando_saida -> PRINT APAR separated_nonempty_list(VIRG,expressao) FPAR PONTOVIRG 
+
+State 91:
+comando_entrada -> LEIALN . expressao PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 92
+-- On comando_funcao shift to state 50
+
+State 92:
+comando_entrada -> LEIALN expressao . PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+expressao -> expressao . MAIS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+-- On PONTOVIRG shift to state 93
+-- On OU shift to state 44
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MENORIGUAL shift to state 55
+-- On MENOR shift to state 59
+-- On MAIS shift to state 51
+-- On MAIORIGUAL shift to state 61
+-- On MAIOR shift to state 63
+-- On IGUAL shift to state 65
+-- On E shift to state 67
+-- On DIVIDE shift to state 57
+-- On DIFERENTE shift to state 69
+
+State 93:
+comando_entrada -> LEIALN expressao PONTOVIRG . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando_entrada -> LEIALN expressao PONTOVIRG 
+-- On PRINTLN reduce production comando_entrada -> LEIALN expressao PONTOVIRG 
+-- On PRINT reduce production comando_entrada -> LEIALN expressao PONTOVIRG 
+-- On LITSTRING reduce production comando_entrada -> LEIALN expressao PONTOVIRG 
+-- On LITREAL reduce production comando_entrada -> LEIALN expressao PONTOVIRG 
+-- On LITINT reduce production comando_entrada -> LEIALN expressao PONTOVIRG 
+-- On LEIALN reduce production comando_entrada -> LEIALN expressao PONTOVIRG 
+-- On LEIA reduce production comando_entrada -> LEIALN expressao PONTOVIRG 
+-- On IF reduce production comando_entrada -> LEIALN expressao PONTOVIRG 
+-- On ID reduce production comando_entrada -> LEIALN expressao PONTOVIRG 
+-- On FOR reduce production comando_entrada -> LEIALN expressao PONTOVIRG 
+-- On ENDPROG reduce production comando_entrada -> LEIALN expressao PONTOVIRG 
+-- On END reduce production comando_entrada -> LEIALN expressao PONTOVIRG 
+-- On ELSE reduce production comando_entrada -> LEIALN expressao PONTOVIRG 
+-- On CASE reduce production comando_entrada -> LEIALN expressao PONTOVIRG 
+-- On APAR reduce production comando_entrada -> LEIALN expressao PONTOVIRG 
+
+State 94:
+comando_entrada -> LEIA . expressao PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 95
+-- On comando_funcao shift to state 50
+
+State 95:
+comando_entrada -> LEIA expressao . PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+expressao -> expressao . MAIS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+-- On PONTOVIRG shift to state 96
+-- On OU shift to state 44
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MENORIGUAL shift to state 55
+-- On MENOR shift to state 59
+-- On MAIS shift to state 51
+-- On MAIORIGUAL shift to state 61
+-- On MAIOR shift to state 63
+-- On IGUAL shift to state 65
+-- On E shift to state 67
+-- On DIVIDE shift to state 57
+-- On DIFERENTE shift to state 69
+
+State 96:
+comando_entrada -> LEIA expressao PONTOVIRG . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando_entrada -> LEIA expressao PONTOVIRG 
+-- On PRINTLN reduce production comando_entrada -> LEIA expressao PONTOVIRG 
+-- On PRINT reduce production comando_entrada -> LEIA expressao PONTOVIRG 
+-- On LITSTRING reduce production comando_entrada -> LEIA expressao PONTOVIRG 
+-- On LITREAL reduce production comando_entrada -> LEIA expressao PONTOVIRG 
+-- On LITINT reduce production comando_entrada -> LEIA expressao PONTOVIRG 
+-- On LEIALN reduce production comando_entrada -> LEIA expressao PONTOVIRG 
+-- On LEIA reduce production comando_entrada -> LEIA expressao PONTOVIRG 
+-- On IF reduce production comando_entrada -> LEIA expressao PONTOVIRG 
+-- On ID reduce production comando_entrada -> LEIA expressao PONTOVIRG 
+-- On FOR reduce production comando_entrada -> LEIA expressao PONTOVIRG 
+-- On ENDPROG reduce production comando_entrada -> LEIA expressao PONTOVIRG 
+-- On END reduce production comando_entrada -> LEIA expressao PONTOVIRG 
+-- On ELSE reduce production comando_entrada -> LEIA expressao PONTOVIRG 
+-- On CASE reduce production comando_entrada -> LEIA expressao PONTOVIRG 
+-- On APAR reduce production comando_entrada -> LEIA expressao PONTOVIRG 
+
+State 97:
+comando_se -> IF . expressao THEN BEGIN list(comando) END option(__anonymous_1) [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 98
+-- On comando_funcao shift to state 50
+
+State 98:
+comando_se -> IF expressao . THEN BEGIN list(comando) END option(__anonymous_1) [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+expressao -> expressao . MAIS expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ THEN OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+-- On THEN shift to state 99
+-- On OU shift to state 44
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MENORIGUAL shift to state 55
+-- On MENOR shift to state 59
+-- On MAIS shift to state 51
+-- On MAIORIGUAL shift to state 61
+-- On MAIOR shift to state 63
+-- On IGUAL shift to state 65
+-- On E shift to state 67
+-- On DIVIDE shift to state 57
+-- On DIFERENTE shift to state 69
+
+State 99:
+comando_se -> IF expressao THEN . BEGIN list(comando) END option(__anonymous_1) [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On BEGIN shift to state 100
+
+State 100:
+comando_se -> IF expressao THEN BEGIN . list(comando) END option(__anonymous_1) [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE shift to state 33
+-- On PRINTLN shift to state 81
+-- On PRINT shift to state 86
+-- On LEIALN shift to state 91
+-- On LEIA shift to state 94
+-- On IF shift to state 97
+-- On ID shift to state 37
+-- On FOR shift to state 101
+-- On CASE shift to state 110
+-- On variavel shift to state 115
+-- On list(comando) shift to state 141
+-- On comando_while shift to state 119
+-- On comando_se shift to state 120
+-- On comando_saida shift to state 121
+-- On comando_funcao shift to state 122
+-- On comando_for shift to state 123
+-- On comando_entrada shift to state 124
+-- On comando_case shift to state 125
+-- On comando_atribuicao shift to state 126
+-- On comando shift to state 139
+-- On END reduce production list(comando) -> 
+
+State 101:
+comando_for -> FOR . variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On ID shift to state 102
+-- On variavel shift to state 103
+
+State 102:
+variavel -> ID . [ PONTO OF ATRIB ]
+-- On PONTO reduce production variavel -> ID 
+-- On OF reduce production variavel -> ID 
+-- On ATRIB reduce production variavel -> ID 
+
+State 103:
+comando_for -> FOR variavel . ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+variavel -> variavel . PONTO ID [ PONTO ATRIB ]
+-- On PONTO shift to state 41
+-- On ATRIB shift to state 104
+
+State 104:
+comando_for -> FOR variavel ATRIB . expressao TO expressao DO BEGIN list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 105
+-- On comando_funcao shift to state 50
+
+State 105:
+comando_for -> FOR variavel ATRIB expressao . TO expressao DO BEGIN list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+expressao -> expressao . MAIS expressao [ TO OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ TO OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ TO OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ TO OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ TO OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ TO OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ TO OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ TO OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ TO OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ TO OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ TO OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ TO OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ TO OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+-- On TO shift to state 106
+-- On OU shift to state 44
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MENORIGUAL shift to state 55
+-- On MENOR shift to state 59
+-- On MAIS shift to state 51
+-- On MAIORIGUAL shift to state 61
+-- On MAIOR shift to state 63
+-- On IGUAL shift to state 65
+-- On E shift to state 67
+-- On DIVIDE shift to state 57
+-- On DIFERENTE shift to state 69
+
+State 106:
+comando_for -> FOR variavel ATRIB expressao TO . expressao DO BEGIN list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 107
+-- On comando_funcao shift to state 50
+
+State 107:
+comando_for -> FOR variavel ATRIB expressao TO expressao . DO BEGIN list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+expressao -> expressao . MAIS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DO DIVIDE DIFERENTE ]
+-- On OU shift to state 44
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MENORIGUAL shift to state 55
+-- On MENOR shift to state 59
+-- On MAIS shift to state 51
+-- On MAIORIGUAL shift to state 61
+-- On MAIOR shift to state 63
+-- On IGUAL shift to state 65
+-- On E shift to state 67
+-- On DO shift to state 108
+-- On DIVIDE shift to state 57
+-- On DIFERENTE shift to state 69
+
+State 108:
+comando_for -> FOR variavel ATRIB expressao TO expressao DO . BEGIN list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On BEGIN shift to state 109
+
+State 109:
+comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN . list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE shift to state 33
+-- On PRINTLN shift to state 81
+-- On PRINT shift to state 86
+-- On LEIALN shift to state 91
+-- On LEIA shift to state 94
+-- On IF shift to state 97
+-- On ID shift to state 37
+-- On FOR shift to state 101
+-- On CASE shift to state 110
+-- On variavel shift to state 115
+-- On list(comando) shift to state 136
+-- On comando_while shift to state 119
+-- On comando_se shift to state 120
+-- On comando_saida shift to state 121
+-- On comando_funcao shift to state 122
+-- On comando_for shift to state 123
+-- On comando_entrada shift to state 124
+-- On comando_case shift to state 125
+-- On comando_atribuicao shift to state 126
+-- On comando shift to state 139
+-- On END reduce production list(comando) -> 
+
+State 110:
+comando_case -> CASE . variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On ID shift to state 102
+-- On variavel shift to state 111
+
+State 111:
+comando_case -> CASE variavel . OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+variavel -> variavel . PONTO ID [ PONTO OF ]
+-- On PONTO shift to state 41
+-- On OF shift to state 112
+
+State 112:
+comando_case -> CASE variavel OF . nonempty_list(cases) option(__anonymous_2) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On nonempty_list(cases) shift to state 113
+-- On expressao shift to state 131
+-- On comando_funcao shift to state 50
+-- On cases shift to state 134
+
+State 113:
+comando_case -> CASE variavel OF nonempty_list(cases) . option(__anonymous_2) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On ELSE shift to state 114
+-- On option(__anonymous_2) shift to state 128
+-- On END reduce production option(__anonymous_2) -> 
+
+State 114:
+option(__anonymous_2) -> ELSE . comando [ END ]
+-- On WHILE shift to state 33
+-- On PRINTLN shift to state 81
+-- On PRINT shift to state 86
+-- On LEIALN shift to state 91
+-- On LEIA shift to state 94
+-- On IF shift to state 97
+-- On ID shift to state 37
+-- On FOR shift to state 101
+-- On CASE shift to state 110
+-- On variavel shift to state 115
+-- On comando_while shift to state 119
+-- On comando_se shift to state 120
+-- On comando_saida shift to state 121
+-- On comando_funcao shift to state 122
+-- On comando_for shift to state 123
+-- On comando_entrada shift to state 124
+-- On comando_case shift to state 125
+-- On comando_atribuicao shift to state 126
+-- On comando shift to state 127
+
+State 115:
+comando_atribuicao -> variavel . ATRIB expressao PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+variavel -> variavel . PONTO ID [ PONTO ATRIB ]
+-- On PONTO shift to state 41
+-- On ATRIB shift to state 116
+
+State 116:
+comando_atribuicao -> variavel ATRIB . expressao PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On expressao shift to state 117
+-- On comando_funcao shift to state 50
+
+State 117:
+comando_atribuicao -> variavel ATRIB expressao . PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+expressao -> expressao . MAIS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DIVIDE DIFERENTE ]
+-- On PONTOVIRG shift to state 118
+-- On OU shift to state 44
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MENORIGUAL shift to state 55
+-- On MENOR shift to state 59
+-- On MAIS shift to state 51
+-- On MAIORIGUAL shift to state 61
+-- On MAIOR shift to state 63
+-- On IGUAL shift to state 65
+-- On E shift to state 67
+-- On DIVIDE shift to state 57
+-- On DIFERENTE shift to state 69
+
+State 118:
+comando_atribuicao -> variavel ATRIB expressao PONTOVIRG . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
+-- On PRINTLN reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
+-- On PRINT reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
+-- On LITSTRING reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
+-- On LITREAL reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
+-- On LITINT reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
+-- On LEIALN reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
+-- On LEIA reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
+-- On IF reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
+-- On ID reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
+-- On FOR reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
+-- On ENDPROG reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
+-- On END reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
+-- On ELSE reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
+-- On CASE reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
+-- On APAR reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
+
+State 119:
+comando -> comando_while . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando -> comando_while 
+-- On PRINTLN reduce production comando -> comando_while 
+-- On PRINT reduce production comando -> comando_while 
+-- On LITSTRING reduce production comando -> comando_while 
+-- On LITREAL reduce production comando -> comando_while 
+-- On LITINT reduce production comando -> comando_while 
+-- On LEIALN reduce production comando -> comando_while 
+-- On LEIA reduce production comando -> comando_while 
+-- On IF reduce production comando -> comando_while 
+-- On ID reduce production comando -> comando_while 
+-- On FOR reduce production comando -> comando_while 
+-- On ENDPROG reduce production comando -> comando_while 
+-- On END reduce production comando -> comando_while 
+-- On ELSE reduce production comando -> comando_while 
+-- On CASE reduce production comando -> comando_while 
+-- On APAR reduce production comando -> comando_while 
+
+State 120:
+comando -> comando_se . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando -> comando_se 
+-- On PRINTLN reduce production comando -> comando_se 
+-- On PRINT reduce production comando -> comando_se 
+-- On LITSTRING reduce production comando -> comando_se 
+-- On LITREAL reduce production comando -> comando_se 
+-- On LITINT reduce production comando -> comando_se 
+-- On LEIALN reduce production comando -> comando_se 
+-- On LEIA reduce production comando -> comando_se 
+-- On IF reduce production comando -> comando_se 
+-- On ID reduce production comando -> comando_se 
+-- On FOR reduce production comando -> comando_se 
+-- On ENDPROG reduce production comando -> comando_se 
+-- On END reduce production comando -> comando_se 
+-- On ELSE reduce production comando -> comando_se 
+-- On CASE reduce production comando -> comando_se 
+-- On APAR reduce production comando -> comando_se 
+
+State 121:
+comando -> comando_saida . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando -> comando_saida 
+-- On PRINTLN reduce production comando -> comando_saida 
+-- On PRINT reduce production comando -> comando_saida 
+-- On LITSTRING reduce production comando -> comando_saida 
+-- On LITREAL reduce production comando -> comando_saida 
+-- On LITINT reduce production comando -> comando_saida 
+-- On LEIALN reduce production comando -> comando_saida 
+-- On LEIA reduce production comando -> comando_saida 
+-- On IF reduce production comando -> comando_saida 
+-- On ID reduce production comando -> comando_saida 
+-- On FOR reduce production comando -> comando_saida 
+-- On ENDPROG reduce production comando -> comando_saida 
+-- On END reduce production comando -> comando_saida 
+-- On ELSE reduce production comando -> comando_saida 
+-- On CASE reduce production comando -> comando_saida 
+-- On APAR reduce production comando -> comando_saida 
+
+State 122:
+comando -> comando_funcao . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando -> comando_funcao 
+-- On PRINTLN reduce production comando -> comando_funcao 
+-- On PRINT reduce production comando -> comando_funcao 
+-- On LITSTRING reduce production comando -> comando_funcao 
+-- On LITREAL reduce production comando -> comando_funcao 
+-- On LITINT reduce production comando -> comando_funcao 
+-- On LEIALN reduce production comando -> comando_funcao 
+-- On LEIA reduce production comando -> comando_funcao 
+-- On IF reduce production comando -> comando_funcao 
+-- On ID reduce production comando -> comando_funcao 
+-- On FOR reduce production comando -> comando_funcao 
+-- On ENDPROG reduce production comando -> comando_funcao 
+-- On END reduce production comando -> comando_funcao 
+-- On ELSE reduce production comando -> comando_funcao 
+-- On CASE reduce production comando -> comando_funcao 
+-- On APAR reduce production comando -> comando_funcao 
+
+State 123:
+comando -> comando_for . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando -> comando_for 
+-- On PRINTLN reduce production comando -> comando_for 
+-- On PRINT reduce production comando -> comando_for 
+-- On LITSTRING reduce production comando -> comando_for 
+-- On LITREAL reduce production comando -> comando_for 
+-- On LITINT reduce production comando -> comando_for 
+-- On LEIALN reduce production comando -> comando_for 
+-- On LEIA reduce production comando -> comando_for 
+-- On IF reduce production comando -> comando_for 
+-- On ID reduce production comando -> comando_for 
+-- On FOR reduce production comando -> comando_for 
+-- On ENDPROG reduce production comando -> comando_for 
+-- On END reduce production comando -> comando_for 
+-- On ELSE reduce production comando -> comando_for 
+-- On CASE reduce production comando -> comando_for 
+-- On APAR reduce production comando -> comando_for 
+
+State 124:
+comando -> comando_entrada . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando -> comando_entrada 
+-- On PRINTLN reduce production comando -> comando_entrada 
+-- On PRINT reduce production comando -> comando_entrada 
+-- On LITSTRING reduce production comando -> comando_entrada 
+-- On LITREAL reduce production comando -> comando_entrada 
+-- On LITINT reduce production comando -> comando_entrada 
+-- On LEIALN reduce production comando -> comando_entrada 
+-- On LEIA reduce production comando -> comando_entrada 
+-- On IF reduce production comando -> comando_entrada 
+-- On ID reduce production comando -> comando_entrada 
+-- On FOR reduce production comando -> comando_entrada 
+-- On ENDPROG reduce production comando -> comando_entrada 
+-- On END reduce production comando -> comando_entrada 
+-- On ELSE reduce production comando -> comando_entrada 
+-- On CASE reduce production comando -> comando_entrada 
+-- On APAR reduce production comando -> comando_entrada 
+
+State 125:
+comando -> comando_case . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando -> comando_case 
+-- On PRINTLN reduce production comando -> comando_case 
+-- On PRINT reduce production comando -> comando_case 
+-- On LITSTRING reduce production comando -> comando_case 
+-- On LITREAL reduce production comando -> comando_case 
+-- On LITINT reduce production comando -> comando_case 
+-- On LEIALN reduce production comando -> comando_case 
+-- On LEIA reduce production comando -> comando_case 
+-- On IF reduce production comando -> comando_case 
+-- On ID reduce production comando -> comando_case 
+-- On FOR reduce production comando -> comando_case 
+-- On ENDPROG reduce production comando -> comando_case 
+-- On END reduce production comando -> comando_case 
+-- On ELSE reduce production comando -> comando_case 
+-- On CASE reduce production comando -> comando_case 
+-- On APAR reduce production comando -> comando_case 
+
+State 126:
+comando -> comando_atribuicao . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando -> comando_atribuicao 
+-- On PRINTLN reduce production comando -> comando_atribuicao 
+-- On PRINT reduce production comando -> comando_atribuicao 
+-- On LITSTRING reduce production comando -> comando_atribuicao 
+-- On LITREAL reduce production comando -> comando_atribuicao 
+-- On LITINT reduce production comando -> comando_atribuicao 
+-- On LEIALN reduce production comando -> comando_atribuicao 
+-- On LEIA reduce production comando -> comando_atribuicao 
+-- On IF reduce production comando -> comando_atribuicao 
+-- On ID reduce production comando -> comando_atribuicao 
+-- On FOR reduce production comando -> comando_atribuicao 
+-- On ENDPROG reduce production comando -> comando_atribuicao 
+-- On END reduce production comando -> comando_atribuicao 
+-- On ELSE reduce production comando -> comando_atribuicao 
+-- On CASE reduce production comando -> comando_atribuicao 
+-- On APAR reduce production comando -> comando_atribuicao 
+
+State 127:
+option(__anonymous_2) -> ELSE comando . [ END ]
+-- On END reduce production option(__anonymous_2) -> ELSE comando 
+
+State 128:
+comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) . END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On END shift to state 129
+
+State 129:
+comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END . PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On PONTOVIRG shift to state 130
+
+State 130:
+comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+-- On PRINTLN reduce production comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+-- On PRINT reduce production comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+-- On LITSTRING reduce production comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+-- On LITREAL reduce production comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+-- On LITINT reduce production comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+-- On LEIALN reduce production comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+-- On LEIA reduce production comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+-- On IF reduce production comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+-- On ID reduce production comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+-- On FOR reduce production comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+-- On ENDPROG reduce production comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+-- On END reduce production comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+-- On ELSE reduce production comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+-- On CASE reduce production comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+-- On APAR reduce production comando_case -> CASE variavel OF nonempty_list(cases) option(__anonymous_2) END PONTOVIRG 
+
+State 131:
+cases -> expressao . DOISPONTOS comando [ LITSTRING LITREAL LITINT ID END ELSE APAR ]
+expressao -> expressao . MAIS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DOISPONTOS DIVIDE DIFERENTE ]
+expressao -> expressao . MENOS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DOISPONTOS DIVIDE DIFERENTE ]
+expressao -> expressao . MULTIPLICA expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DOISPONTOS DIVIDE DIFERENTE ]
+expressao -> expressao . DIVIDE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DOISPONTOS DIVIDE DIFERENTE ]
+expressao -> expressao . MODULO expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DOISPONTOS DIVIDE DIFERENTE ]
+expressao -> expressao . MENOR expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DOISPONTOS DIVIDE DIFERENTE ]
+expressao -> expressao . IGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DOISPONTOS DIVIDE DIFERENTE ]
+expressao -> expressao . MENORIGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DOISPONTOS DIVIDE DIFERENTE ]
+expressao -> expressao . MAIORIGUAL expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DOISPONTOS DIVIDE DIFERENTE ]
+expressao -> expressao . DIFERENTE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DOISPONTOS DIVIDE DIFERENTE ]
+expressao -> expressao . MAIOR expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DOISPONTOS DIVIDE DIFERENTE ]
+expressao -> expressao . E expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DOISPONTOS DIVIDE DIFERENTE ]
+expressao -> expressao . OU expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL E DOISPONTOS DIVIDE DIFERENTE ]
+-- On OU shift to state 44
+-- On MULTIPLICA shift to state 46
+-- On MODULO shift to state 53
+-- On MENOS shift to state 48
+-- On MENORIGUAL shift to state 55
+-- On MENOR shift to state 59
+-- On MAIS shift to state 51
+-- On MAIORIGUAL shift to state 61
+-- On MAIOR shift to state 63
+-- On IGUAL shift to state 65
+-- On E shift to state 67
+-- On DOISPONTOS shift to state 132
+-- On DIVIDE shift to state 57
+-- On DIFERENTE shift to state 69
+
+State 132:
+cases -> expressao DOISPONTOS . comando [ LITSTRING LITREAL LITINT ID END ELSE APAR ]
+-- On WHILE shift to state 33
+-- On PRINTLN shift to state 81
+-- On PRINT shift to state 86
+-- On LEIALN shift to state 91
+-- On LEIA shift to state 94
+-- On IF shift to state 97
+-- On ID shift to state 37
+-- On FOR shift to state 101
+-- On CASE shift to state 110
+-- On variavel shift to state 115
+-- On comando_while shift to state 119
+-- On comando_se shift to state 120
+-- On comando_saida shift to state 121
+-- On comando_funcao shift to state 122
+-- On comando_for shift to state 123
+-- On comando_entrada shift to state 124
+-- On comando_case shift to state 125
+-- On comando_atribuicao shift to state 126
+-- On comando shift to state 133
+
+State 133:
+cases -> expressao DOISPONTOS comando . [ LITSTRING LITREAL LITINT ID END ELSE APAR ]
+-- On LITSTRING reduce production cases -> expressao DOISPONTOS comando 
+-- On LITREAL reduce production cases -> expressao DOISPONTOS comando 
+-- On LITINT reduce production cases -> expressao DOISPONTOS comando 
+-- On ID reduce production cases -> expressao DOISPONTOS comando 
+-- On END reduce production cases -> expressao DOISPONTOS comando 
+-- On ELSE reduce production cases -> expressao DOISPONTOS comando 
+-- On APAR reduce production cases -> expressao DOISPONTOS comando 
+
+State 134:
+nonempty_list(cases) -> cases . [ END ELSE ]
+nonempty_list(cases) -> cases . nonempty_list(cases) [ END ELSE ]
+-- On LITSTRING shift to state 34
+-- On LITREAL shift to state 35
+-- On LITINT shift to state 36
+-- On ID shift to state 37
+-- On APAR shift to state 39
+-- On variavel shift to state 40
+-- On nonempty_list(cases) shift to state 135
+-- On expressao shift to state 131
+-- On comando_funcao shift to state 50
+-- On cases shift to state 134
+-- On END reduce production nonempty_list(cases) -> cases 
+-- On ELSE reduce production nonempty_list(cases) -> cases 
+
+State 135:
+nonempty_list(cases) -> cases nonempty_list(cases) . [ END ELSE ]
+-- On END reduce production nonempty_list(cases) -> cases nonempty_list(cases) 
+-- On ELSE reduce production nonempty_list(cases) -> cases nonempty_list(cases) 
+
+State 136:
+comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) . END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On END shift to state 137
+
+State 137:
+comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END . PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On PONTOVIRG shift to state 138
+
+State 138:
+comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On PRINTLN reduce production comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On PRINT reduce production comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On LITSTRING reduce production comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On LITREAL reduce production comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On LITINT reduce production comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On LEIALN reduce production comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On LEIA reduce production comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On IF reduce production comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On ID reduce production comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On FOR reduce production comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On ENDPROG reduce production comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On END reduce production comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On ELSE reduce production comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On CASE reduce production comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On APAR reduce production comando_for -> FOR variavel ATRIB expressao TO expressao DO BEGIN list(comando) END PONTOVIRG 
+
+State 139:
+list(comando) -> comando . list(comando) [ ENDPROG END ]
+-- On WHILE shift to state 33
+-- On PRINTLN shift to state 81
+-- On PRINT shift to state 86
+-- On LEIALN shift to state 91
+-- On LEIA shift to state 94
+-- On IF shift to state 97
+-- On ID shift to state 37
+-- On FOR shift to state 101
+-- On CASE shift to state 110
+-- On variavel shift to state 115
+-- On list(comando) shift to state 140
+-- On comando_while shift to state 119
+-- On comando_se shift to state 120
+-- On comando_saida shift to state 121
+-- On comando_funcao shift to state 122
+-- On comando_for shift to state 123
+-- On comando_entrada shift to state 124
+-- On comando_case shift to state 125
+-- On comando_atribuicao shift to state 126
+-- On comando shift to state 139
+-- On ENDPROG reduce production list(comando) -> 
+-- On END reduce production list(comando) -> 
+
+State 140:
+list(comando) -> comando list(comando) . [ ENDPROG END ]
+-- On ENDPROG reduce production list(comando) -> comando list(comando) 
+-- On END reduce production list(comando) -> comando list(comando) 
+
+State 141:
+comando_se -> IF expressao THEN BEGIN list(comando) . END option(__anonymous_1) [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On END shift to state 142
+
+State 142:
+comando_se -> IF expressao THEN BEGIN list(comando) END . option(__anonymous_1) [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On ELSE shift to state 143
+-- On option(__anonymous_1) shift to state 148
+-- On WHILE reduce production option(__anonymous_1) -> 
+-- On PRINTLN reduce production option(__anonymous_1) -> 
+-- On PRINT reduce production option(__anonymous_1) -> 
+-- On LITSTRING reduce production option(__anonymous_1) -> 
+-- On LITREAL reduce production option(__anonymous_1) -> 
+-- On LITINT reduce production option(__anonymous_1) -> 
+-- On LEIALN reduce production option(__anonymous_1) -> 
+-- On LEIA reduce production option(__anonymous_1) -> 
+-- On IF reduce production option(__anonymous_1) -> 
+-- On ID reduce production option(__anonymous_1) -> 
+-- On FOR reduce production option(__anonymous_1) -> 
+-- On ENDPROG reduce production option(__anonymous_1) -> 
+-- On END reduce production option(__anonymous_1) -> 
+-- On ELSE reduce production option(__anonymous_1) -> 
+-- On CASE reduce production option(__anonymous_1) -> 
+-- On APAR reduce production option(__anonymous_1) -> 
+** Conflict on ELSE
+
+State 143:
+option(__anonymous_1) -> ELSE . BEGIN list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On BEGIN shift to state 144
+
+State 144:
+option(__anonymous_1) -> ELSE BEGIN . list(comando) END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE shift to state 33
+-- On PRINTLN shift to state 81
+-- On PRINT shift to state 86
+-- On LEIALN shift to state 91
+-- On LEIA shift to state 94
+-- On IF shift to state 97
+-- On ID shift to state 37
+-- On FOR shift to state 101
+-- On CASE shift to state 110
+-- On variavel shift to state 115
+-- On list(comando) shift to state 145
+-- On comando_while shift to state 119
+-- On comando_se shift to state 120
+-- On comando_saida shift to state 121
+-- On comando_funcao shift to state 122
+-- On comando_for shift to state 123
+-- On comando_entrada shift to state 124
+-- On comando_case shift to state 125
+-- On comando_atribuicao shift to state 126
+-- On comando shift to state 139
+-- On END reduce production list(comando) -> 
+
+State 145:
+option(__anonymous_1) -> ELSE BEGIN list(comando) . END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On END shift to state 146
+
+State 146:
+option(__anonymous_1) -> ELSE BEGIN list(comando) END . PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On PONTOVIRG shift to state 147
+
+State 147:
+option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG 
+-- On PRINTLN reduce production option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG 
+-- On PRINT reduce production option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG 
+-- On LITSTRING reduce production option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG 
+-- On LITREAL reduce production option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG 
+-- On LITINT reduce production option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG 
+-- On LEIALN reduce production option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG 
+-- On LEIA reduce production option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG 
+-- On IF reduce production option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG 
+-- On ID reduce production option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG 
+-- On FOR reduce production option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG 
+-- On ENDPROG reduce production option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG 
+-- On END reduce production option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG 
+-- On ELSE reduce production option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG 
+-- On CASE reduce production option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG 
+-- On APAR reduce production option(__anonymous_1) -> ELSE BEGIN list(comando) END PONTOVIRG 
+
+State 148:
+comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+-- On PRINTLN reduce production comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+-- On PRINT reduce production comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+-- On LITSTRING reduce production comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+-- On LITREAL reduce production comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+-- On LITINT reduce production comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+-- On LEIALN reduce production comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+-- On LEIA reduce production comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+-- On IF reduce production comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+-- On ID reduce production comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+-- On FOR reduce production comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+-- On ENDPROG reduce production comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+-- On END reduce production comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+-- On ELSE reduce production comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+-- On CASE reduce production comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+-- On APAR reduce production comando_se -> IF expressao THEN BEGIN list(comando) END option(__anonymous_1) 
+
+State 149:
+comando_while -> WHILE expressao DO BEGIN list(comando) . END PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On END shift to state 150
+
+State 150:
+comando_while -> WHILE expressao DO BEGIN list(comando) END . PONTOVIRG [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On PONTOVIRG shift to state 151
+
+State 151:
+comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG . [ WHILE PRINTLN PRINT LITSTRING LITREAL LITINT LEIALN LEIA IF ID FOR ENDPROG END ELSE CASE APAR ]
+-- On WHILE reduce production comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On PRINTLN reduce production comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On PRINT reduce production comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On LITSTRING reduce production comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On LITREAL reduce production comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On LITINT reduce production comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On LEIALN reduce production comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On LEIA reduce production comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On IF reduce production comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On ID reduce production comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On FOR reduce production comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On ENDPROG reduce production comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On END reduce production comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On ELSE reduce production comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On CASE reduce production comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG 
+-- On APAR reduce production comando_while -> WHILE expressao DO BEGIN list(comando) END PONTOVIRG 
+
+State 152:
+declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) . END PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+-- On END shift to state 153
+
+State 153:
+declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END . PONTOVIRG [ VAR ID FUNCAO BEGIN ]
+-- On PONTOVIRG shift to state 154
+
+State 154:
+declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG . [ VAR ID FUNCAO BEGIN ]
+-- On VAR reduce production declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG 
+-- On ID reduce production declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG 
+-- On FUNCAO reduce production declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG 
+-- On BEGIN reduce production declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples PONTOVIRG list(declaracao) BEGIN list(comando) END PONTOVIRG 
+
+State 155:
+list(declaracao) -> declaracao . list(declaracao) [ BEGIN ]
+-- On VAR shift to state 21
+-- On ID shift to state 7
+-- On separated_nonempty_list(VIRG,ID) shift to state 27
+-- On list(declaracao) shift to state 156
+-- On declaracao shift to state 155
+-- On BEGIN reduce production list(declaracao) -> 
+
+State 156:
+list(declaracao) -> declaracao list(declaracao) . [ BEGIN ]
+-- On BEGIN reduce production list(declaracao) -> declaracao list(declaracao) 
+
+State 157:
+parametros -> loption(separated_nonempty_list(VIRG,ID)) . DOISPONTOS tipo_simples [ FPAR ]
+-- On DOISPONTOS shift to state 158
+
+State 158:
+parametros -> loption(separated_nonempty_list(VIRG,ID)) DOISPONTOS . tipo_simples [ FPAR ]
+-- On STRING shift to state 14
+-- On REAL shift to state 15
+-- On INTEGER shift to state 16
+-- On CHAR shift to state 17
+-- On BOOLEAN shift to state 18
+-- On tipo_simples shift to state 159
+
+State 159:
+parametros -> loption(separated_nonempty_list(VIRG,ID)) DOISPONTOS tipo_simples . [ FPAR ]
+-- On FPAR reduce production parametros -> loption(separated_nonempty_list(VIRG,ID)) DOISPONTOS tipo_simples 
+
+State 160:
+programa -> PROGRAM ID PONTOVIRG list(declaracao_funcao) . list(declaracao) BEGIN list(comando) ENDPROG EOF [ # ]
+-- On VAR shift to state 21
+-- On ID shift to state 7
+-- On separated_nonempty_list(VIRG,ID) shift to state 27
+-- On list(declaracao) shift to state 161
+-- On declaracao shift to state 155
+-- On BEGIN reduce production list(declaracao) -> 
+
+State 161:
+programa -> PROGRAM ID PONTOVIRG list(declaracao_funcao) list(declaracao) . BEGIN list(comando) ENDPROG EOF [ # ]
+-- On BEGIN shift to state 162
+
+State 162:
+programa -> PROGRAM ID PONTOVIRG list(declaracao_funcao) list(declaracao) BEGIN . list(comando) ENDPROG EOF [ # ]
+-- On WHILE shift to state 33
+-- On PRINTLN shift to state 81
+-- On PRINT shift to state 86
+-- On LEIALN shift to state 91
+-- On LEIA shift to state 94
+-- On IF shift to state 97
+-- On ID shift to state 37
+-- On FOR shift to state 101
+-- On CASE shift to state 110
+-- On variavel shift to state 115
+-- On list(comando) shift to state 163
+-- On comando_while shift to state 119
+-- On comando_se shift to state 120
+-- On comando_saida shift to state 121
+-- On comando_funcao shift to state 122
+-- On comando_for shift to state 123
+-- On comando_entrada shift to state 124
+-- On comando_case shift to state 125
+-- On comando_atribuicao shift to state 126
+-- On comando shift to state 139
+-- On ENDPROG reduce production list(comando) -> 
+
+State 163:
+programa -> PROGRAM ID PONTOVIRG list(declaracao_funcao) list(declaracao) BEGIN list(comando) . ENDPROG EOF [ # ]
+-- On ENDPROG shift to state 164
+
+State 164:
+programa -> PROGRAM ID PONTOVIRG list(declaracao_funcao) list(declaracao) BEGIN list(comando) ENDPROG . EOF [ # ]
+-- On EOF shift to state 165
+
+State 165:
+programa -> PROGRAM ID PONTOVIRG list(declaracao_funcao) list(declaracao) BEGIN list(comando) ENDPROG EOF . [ # ]
+-- On # reduce production programa -> PROGRAM ID PONTOVIRG list(declaracao_funcao) list(declaracao) BEGIN list(comando) ENDPROG EOF 
+
+State 166:
+list(declaracao_funcao) -> declaracao_funcao . list(declaracao_funcao) [ VAR ID BEGIN ]
+-- On FUNCAO shift to state 4
+-- On list(declaracao_funcao) shift to state 167
+-- On declaracao_funcao shift to state 166
+-- On VAR reduce production list(declaracao_funcao) -> 
+-- On ID reduce production list(declaracao_funcao) -> 
+-- On BEGIN reduce production list(declaracao_funcao) -> 
+
+State 167:
+list(declaracao_funcao) -> declaracao_funcao list(declaracao_funcao) . [ VAR ID BEGIN ]
+-- On VAR reduce production list(declaracao_funcao) -> declaracao_funcao list(declaracao_funcao) 
+-- On ID reduce production list(declaracao_funcao) -> declaracao_funcao list(declaracao_funcao) 
+-- On BEGIN reduce production list(declaracao_funcao) -> declaracao_funcao list(declaracao_funcao) 
+
+State 168:
+programa' -> programa . [ # ]
+-- On # accept programa
+
